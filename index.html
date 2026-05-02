@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/index.css" />
+<script src="js/script.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALPHATYPE</a>
+				<div class="navbar-menu">
+					<a href="#" class="active">홈</a>
+					<a href="#">구독</a>
+					<a href="#">보관함</a>
+				</div>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="search">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-bell"></i>
+					<em class="bedge bell-bedge">2</em>
+				</button>
+				<button type="button" class="btn btn-message">
+					<i class="far fa-envelope"></i>
+					<em class="bedge msg-bedge">2</em>
+				</button>
+				<button type="button" class="btn user-menu" onclick="menuToggle()">
+					<img src="./image/common/default_profile.png"/>
+				</button>
+			</div>
+		</div>
+	</nav>
+	<nav class="sub-navbar">
+		<div class="inner">
+			<a href="#" class="active">발견</a>
+			<a href="#">스토어</a>
+			<a href="#">컬렉션</a>
+			<a href="#">이벤트</a>
+		</div>
+	</nav>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<section class="first-body webzin-body body" id="recommend-posts">
+	<div class="inner">
+		<h2 class="tit">회원님을 위한 추천<span class="beta">BETA</span></h2>
+		<div class="post-list">
+			<div class="post-container">
+				<div class="post-contents">
+					<div class="post-wrap">
+						<h5 class="title">핸드메이드 인형 키링 '오뭉누니'</h5>
+						<p class="contents">흰머리오목눈이가 너무 귀여워서 만들어본 보들보들한 오뭉누니</p>
+						<div class="post-tags">
+							<span class="promotion">프로모션</span>
+							<span>핸드메이드</span>
+							<span>핸드메이드인형</span>
+						</div>
+					</div>
+					<div class="post-thumb">
+						<img src="./image/thumb/1d3d12f4bbebb0ef5a648df2423de753.webp"/>
+					</div>
+				</div>
+				<div class="post-contents-bottom">
+					<div class="post-author">
+						<a><img src="./image/common/default_profile.png" class="n-img"/></a>
+						<div class="user-profile-nickname">
+							<a>홍길동</a>
+						</div>
+						<p class="post-date">1일 전</p>
+					</div>
+					<div class="post-action">
+						<a class="btn-scrap"><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn-more btn-toggle" data-target="wp-more-toggle-01"><i class="far fa-comment-dots"></i></button>
+						<ul id="wp-more-toggle-01" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-container">
+				<div class="post-contents">
+					<div class="post-wrap">
+						<h5 class="title">경인로 666 이야기_26</h5>
+						<p class="contents">(재미없음 주의! 그냥 일 이야기인데, 기록하고 싶어 올립니다. 그래서 이번화만 유료화 합니...</p>
+						<div class="post-tags">
+							<span>일상</span>
+							<span>밥벌이</span>
+						</div>
+					</div>
+					<div class="post-thumb">
+						<img src="./image/thumb/aaf0bd16494356941241073309.webp"/>
+					</div>
+				</div>
+				<div class="post-contents-bottom">
+					<div class="post-author">
+						<a><img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp" class="n-img"/></a>
+						<div class="user-profile-nickname">
+							<a>55나</a>
+						</div>
+						<p class="post-date">2024.08.12</p>
+					</div>
+					<div class="post-action">
+						<a class="btn-scrap"><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn-more btn-toggle" data-target="wp-more-toggle-02"><i class="far fa-comment-dots"></i></button>
+						<ul id="wp-more-toggle-02" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-container">
+				<div class="post-contents">
+					<div class="post-wrap">
+						<h5 class="title">외울 수 밖에 없는 암기 시스템 (feat. 노션)</h5>
+						<p class="contents">너무나도 당연한 업무 용어를 순간 까먹은 경험 있으신가요? 당연히 알고있던 연관 업무를 잊거...</p>
+					</div>
+					<div class="post-thumb">
+						<img src="./image/thumb/c4f5af6028231633538978496.webp"/>
+					</div>
+				</div>
+				<div class="post-contents-bottom">
+					<div class="post-author">
+						<a><img src="./image/common/default_profile.png" class="n-img"/></a>
+						<div class="user-profile-nickname">
+							<a>노킹</a>
+						</div>
+						<p class="post-date">2024.08.14</p>
+					</div>
+					<div class="post-action">
+						<a class="btn-scrap"><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn-more btn-toggle" data-target="wp-more-toggle-03"><i class="far fa-comment-dots"></i></button>
+						<ul id="wp-more-toggle-03" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-container">
+				<div class="post-contents">
+					<div class="post-wrap">
+						<h5 class="title">재벌공&재벌수, 재벌물 : 재벌집 둘째 아들은 아마도 게이일 거야</h5>
+						<p class="contents">📝초보 작가, 초보 독자를 위한 웹소설 BL 큐레이션 칼럼 🔍KEYWORD: 재벌공, 재벌수, 정...</p>
+					</div>
+					<div class="post-thumb">
+						<img src="./image/thumb/c4f5af6028231633538978496.webp"/>
+					</div>
+				</div>
+				<div class="post-contents-bottom">
+					<div class="post-author">
+						<a><img src="./image/common/default_profile.png" class="n-img"/></a>
+						<div class="user-profile-nickname">
+							<a>북마녀</a>
+						</div>
+						<p class="post-date">2024.08.31</p>
+					</div>
+					<div class="post-action">
+						<a class="btn-scrap"><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn-more btn-toggle" data-target="wp-more-toggle-04"><i class="far fa-comment-dots"></i></button>
+						<ul id="wp-more-toggle-04" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more btn-reload"><i class="fas fa-sync-alt"></i> 콘텐츠 발견하기</button>
+		</div>
+	</div>
+</section>
+
+<section class="gallery-body body" id="goods-posts">
+	<div class="inner">
+		<h2 class="tit">독서용품 기획전</h2>
+		<div class="post-gallery">
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">금붕어 독서링</h5>
+					<p class="product"><span class="name">깜냥공방</span><span class="st">18,000원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/aaf0bd16494356941241073309.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">무중력 책갈피 비즈책갈피 북마크 끈갈피</h5>
+					<p class="product"><span class="name">뉘</span><span class="st">11,000원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/c4f5af6028231633538978496.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">넌나의행운이야! 네잎클로버 책갈피 비즈책갈피 북마크 끈갈피</h5>
+					<p class="product"><span class="name">뉘</span><span class="st">10,500원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/1d3d12f4bbebb0ef5a648df2423de753.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">[숲비] 산딸기 비즈 책갈피 - 책 끈갈피 북마크</h5>
+					<p class="product"><span class="name">숲비</span><span class="st">13,800원</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more">기획전 상품 더보기</button>
+		</div>
+	</div>
+</section>
+
+<section class="gallery-body body" id="today-best-posts">
+	<div class="inner">
+		<h2 class="tit">오늘 인기 포스트</h2>
+		<div class="post-category">
+			<a href="#" class="active">웹툰</a>
+			<a href="#">웹소설</a>
+			<a href="#">창작소재</a>
+			<a href="#">일러스트</a>
+			<a href="#">일상</a>
+			<a href="#">문화</a>
+			<a href="#">클래스</a>
+			<a href="#">자기계발</a>
+			<a href="#">경제</a>
+		</div>
+		<div class="post-gallery">
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">악플과 함께하지 않게 (8)</h5>
+					<p class="product"><span class="name">라클렛</span><span class="st">2일 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>일러스트</span>
+						<span>일상</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="tbp-more-toggle-01"><i class="far fa-comment-dots"></i></button>
+						<ul id="tbp-more-toggle-01" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/aaf0bd16494356941241073309.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">39화. 괴짜 숯장이와 늙은 인어 (39)</h5>
+					<p class="product"><span class="name">뉘</span><span class="st">3일 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>경제</span>
+						<span>저축</span>
+						<span>제테크</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="tbp-more-toggle-02"><i class="far fa-comment-dots"></i></button>
+						<ul id="tbp-more-toggle-02" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/c4f5af6028231633538978496.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">애인과 같이 잘 때 (19금)</h5>
+					<p class="product"><span class="name">K</span><span class="st">4일 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>경제</span>
+						<span>돈</span>
+						<span>절약</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="tbp-more-toggle-03"><i class="far fa-comment-dots"></i></button>
+						<ul id="tbp-more-toggle-03" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/1d3d12f4bbebb0ef5a648df2423de753.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">모세이야기 92화</h5>
+					<p class="product"><span class="name">요정</span><span class="st">1일 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>일상</span>
+						<span>일러스트</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="tbp-more-toggle-04"><i class="far fa-comment-dots"></i></button>
+						<ul id="tbp-more-toggle-04" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more"><span class="tag">#웹툰</span>인기 포스트 더보기</button>
+		</div>
+	</div>
+</section>
+
+<section class="gallery-body body" id="new-best-posts">
+	<div class="inner">
+		<h2 class="tit">새로 나온 포스트</h2>
+		<div class="post-category">
+			<a href="#" class="active">웹툰</a>
+			<a href="#">웹소설</a>
+			<a href="#">창작소재</a>
+			<a href="#">일러스트</a>
+			<a href="#">일상</a>
+			<a href="#">문화</a>
+			<a href="#">클래스</a>
+			<a href="#">자기계발</a>
+			<a href="#">경제</a>
+		</div>
+		<div class="post-gallery">
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">스포트라이트 스킬컷 커미션</h5>
+					<p class="product"><span class="name">...</span><span class="st">12분 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>일러스트</span>
+						<span>커미션</span>
+						<span>스킬컷</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="nbp-more-toggle-01"><i class="far fa-comment-dots"></i></button>
+						<ul id="nbp-more-toggle-01" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/aaf0bd16494356941241073309.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">휴대폰으로 한 낙서</h5>
+					<p class="product"><span class="name">임달영</span><span class="st">15시간 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>일러스트</span>
+						<span>낙서</span>
+						<span>임달영</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="nbp-more-toggle-02"><i class="far fa-comment-dots"></i></button>
+						<ul id="nbp-more-toggle-02" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/c4f5af6028231633538978496.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">😒</h5>
+					<p class="product"><span class="name">371</span><span class="st">21시간 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>일러스트</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="nbp-more-toggle-03"><i class="far fa-comment-dots"></i></button>
+						<ul id="nbp-more-toggle-03" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/1d3d12f4bbebb0ef5a648df2423de753.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">[일러스트] Blue is the universal Love</h5>
+					<p class="product"><span class="name">앨리스</span><span class="st">1일 전</span></p>
+				</div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>드로잉</span>
+						<span>blue</span>
+						<span>일러스트</span>
+					</div>
+					<div class="post-action">
+						<button type="button" class="btn-more btn-toggle" data-target="nbp-more-toggle-04"><i class="far fa-comment-dots"></i></button>
+						<ul id="nbp-more-toggle-04" class="more-toggle">
+							<li><a><i class="fas fa-share-square"></i>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more"><span class="tag">#일러스트</span>새 포스트 더보기</button>
+		</div>
+	</div>
+</section>
+
+<section class="last-body gallery-body body" id="store-posts">
+	<div class="inner">
+		<h2 class="tit">스토어<span class="beta">BETA</span></h2>
+		<div class="post-category">
+			<a href="#" class="active">전체</a>
+			<a href="#">도서</a>
+			<a href="#">문구</a>
+			<a href="#">케이스/키링</a>
+			<a href="#">패션잡화</a>
+			<a href="#">액세서리</a>
+			<a href="#">홈리빙</a>
+			<a href="#">작업의뢰</a>
+		</div>
+		<div class="post-gallery">
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">포슬포슬 뜨개 밤지갑</h5>
+					<p class="product"><span class="name">뽀이</span><span class="st">16,000원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/aaf0bd16494356941241073309.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">[HANDMADE] 네잎클로버 키링</h5>
+					<p class="product"><span class="name">러브훅스</span><span class="st">1,200원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/c4f5af6028231633538978496.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">천연 말레이시아옥💜라벤더자수정 리케8 원석 목걸이 925실버�</h5>
+					<p class="product"><span class="name">아리엘</span><span class="st">98,000원</span></p>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb"><img src="./image/thumb/1d3d12f4bbebb0ef5a648df2423de753.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">핸드메이드 헤어밴드</h5>
+					<p class="product"><span class="name">주문제작 휴식중</span><span class="st">11,000원</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more">스토어 상품 더보기</button>
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+		<ul class="f-menu">
+			<li><a href="#">서비스 소개</a></li>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">청소년보호정책</a></li>
+			<li><a href="#">도움 센터</a></li>
+			<li><a href="#">권리침해신고센터</a></li>
+			<li><a href="#">공식 채널</a></li>
+			<li><a href="#">회사 소개・문의</a></li>
+			<li class="copy">© ALPHATYPE, Inc.</li>
+		</ul>
+		<address>
+            <span>주식회사 알파타입</span>
+            <span>사업자등록번호: 000-00-000000</span>
+            <span>통신판매업신고번호: 2024-서울00-00000</span>
+            <span>대표자명: 000</span><br/>
+            <span>주소: 서울시 강남구 테헤란로4길 5, 6층</span>
+            <span>연락처: 02-6956-0827</span>
+        </address>
+		<span class="guide">알파타입은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 알파타입은 콘텐츠, 거래정보 및 거래에 대하여 책임을 지지 않습니다.</span>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>
