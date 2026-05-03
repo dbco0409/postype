@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/write.css" />
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+<script src="js/se_create.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+<header id="st-head">
+	<h2 class="tit">새 시리즈 만들기</h2>
+	<button type="button" class="btn user-menu" onclick="menuToggle()">
+		<img src="./image/common/default_profile.png"/>
+	</button>
+</header>
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<aside id="st-menu">
+	<div class="fixedbg"></div>
+	<div class="inner">
+		<div class="st-logo bor">
+			<a class="ap-logo">ALP<span>HATYPE</span></a>
+		</div>
+		<div class="st-h bor">
+			<button type="button" class="btn btn-ch">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h3>알파플러스 채널</h3>
+			</button>
+			<div class="btns">
+				<button type="button" class="btn btn-primary btn-write"><i class="fas fa-plus"></i><h3>새 포스트 쓰기</h3></button>
+			</div>
+		</div>
+		<div class="st-b ">
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-columns"></i>
+				<h3>대시보드</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-clone"></i>
+				<h3>포스트</h3>
+			</button>
+			<button type="button" class="btn btn-nabar btn-active">
+				<i class="fas fa-book"></i>
+				<h3>시리즈</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-chart-bar"></i>
+				<h3>통계</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-user-plus n-ico"></i>
+				<h3>커뮤니티</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-shopping-basket"></i>
+				<h3>스토어</h3>
+				<span class="beta">베타</span>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fab fa-mastodon"></i>
+				<h3>멤버십</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-user n-ico"></i>
+				<h3>구독자</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-cog n-ico"></i>
+				<h3>설정</h3>
+			</button>
+		</div>
+	</div>
+</aside>
+<nav id="m_menu">
+	<button type="button" class="btn btn-nabar btn-active">
+		<i class="fas fa-columns"></i>
+		<h3>대시보드</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="far fa-clone"></i>
+		<h3>포스트</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-chart-bar"></i>
+		<h3>통계</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-shopping-basket"></i>
+		<h3>스토어</h3>
+	</button>
+	<button type="button" class="btn btn-nabar btn-menu">
+		<i class="fas fa-bars"></i>
+		<h3>모바일메뉴</h3>
+	</button>
+</nav>
+
+<form>
+<section class="ch-write se-write" id="se-write">
+	<div class="inner">
+		<div class="profile-group input-group group">
+			<div class="thumb-group">
+				<div class="col-g">
+					<span id="nothumb">ALP</span>
+					<img id="thumbnail" src="image/common/blog_blank.png"/>
+				</div>
+				<div class="col-g">
+					<div class="input"><button type="button" class="btn btn-light" onclick="showimgModal();">표지 설정</button></div>
+					<p class="desc">600*800 픽셀 이상</p>
+				</div>
+			</div>
+		</div>
+		<div class="form-set">
+			<div class="input-group group">
+				<label for="post-date1">설정<span class="star">*</span></label>
+				<div class="check-group">
+					<label for="post-date1" class="custom-checkbox strong">
+						<input type="radio" id="post-date1" name="post-date" value="1"/>
+						<span class="checkmark"></span>
+						단편
+					</label>
+					<label for="post-date2" class="custom-checkbox strong">
+						<input type="radio" id="post-date2" name="post-date" value="1" checked/>
+						<span class="checkmark"></span>
+						연재
+					</label>
+					<label for="post-date3" class="custom-checkbox strong">
+						<input type="radio" id="post-date3" name="post-date" value="1"/>
+						<span class="checkmark"></span>
+						완결
+					</label>
+				</div>
+			</div>
+			<div class="input-group group">
+				<label for="title">제목<span class="star">*</span></label>
+				<div class="input"><input type="text" id="title" placeholder="시리즈 제목" class="form-control input-txt"/></div>
+				<p class="desc">최대 40자까지 입력할 수 있어요. 독자가 작품을 찾아보고 선택하는데 도움이 될 수 있도록 크리에이터의 이름이나 대표작 정보를 포함해보세요. 예) 포스타입의 단편 시리즈</p>
+			</div>
+			<div class="input-group group">
+				<label for="desc">설명<span class="star">*</span></label>
+				<div class="input"><textarea class="form-control texts" id="desc" rows="4" placeholder="시리즈 설명"></textarea></div>
+				<p class="desc">최대 100자까지 입력할 수 있어요. 작품의 개요, 연재정보 등으로 시리즈를 더 매력적으로 소개해보세요.</p>
+			</div>
+			<div class="tag-group group">
+				<label for="tag">시리즈 태그 설정</label>
+				<p class="desc">시리즈 태그를 정확하게 입력하고 더 많은 타깃 독자를 만나보세요.</p>
+				<button type="button" class="btn btn-primary" onclick="showTagModal();">+ 시리즈 태그 등록</button>
+			</div>
+		</div>
+	</div>
+	<div class="btns">
+		<button type="button" class="btn btn-light" onclick="history.back()">뒤로</button>
+		<button type="button" class="btn btn-primary" onclick="validateForm()">새 시리즈 만들기</button>
+	</div>
+</section>
+</form>
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">알림</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-alert-message">이메일 주소를 정확히 입력해주세요.</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="imgUploadModal" tabindex="-1" role="dialog" aria-labelledby="imgUploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">표지 설정</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="form-group">
+				<input type="file" id="uploadFile" class="form-control"/>
+			</div>
+			<p>최대 10MB의 이미지 파일을 올릴 수 있어요.</p>
+      </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+		<button type="button" class="btn btn-primary addBtn" id="insertFile">다음</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tagModal" tabindex="-1" role="dialog" aria-labelledby="tagModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">시리즈 태그</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="head_title">
+				<h3>작품의 대표 태그를 선택해 주세요.</h3>
+				<p>대표 태그로 작품의 분야를 선택해 보세요.</p>
+			</div>
+			<div class="searchBox hide">
+				<div class="group">
+					<input type="search" class="input-search" placeholder="태그 입력..."/>
+				</div>
+			</div>
+			<div class="tag-group">
+				<a>웹툰</a>
+				<a>웹소설</a>
+				<a>팬창작</a>
+				<a>지식</a>
+				<a>에세이</a>
+				<a>문화</a>
+				<a>시</a>
+				<a>창작소재</a>
+				<a>일러스트</a>
+				<a>사진</a>
+				<a>동영상</a>
+				<a>클래스</a>
+				<a>오디오</a>
+			</div>
+			<div class="search-result hide">
+				<button type="button" class="btn"><span class="keyword">일상</span><span class="num">3,693</span></button>
+				<button type="button" class="btn"><span class="keyword">판타지</span><span class="num">2,710</span></button>
+				<button type="button" class="btn"><span class="keyword">로맨스</span><span class="num">2,194</span></button>
+				<button type="button" class="btn"><span class="keyword">만화</span><span class="num">2,181</span></button>
+				<button type="button" class="btn"><span class="keyword">bl</span><span class="num">1,839</span></button>
+				<button type="button" class="btn"><span class="keyword">드라마</span><span class="num">1,693</span></button>
+				<button type="button" class="btn"><span class="keyword">개그</span><span class="num">1,538</span></button>
+				<button type="button" class="btn"><span class="keyword">그림</span><span class="num">786</span></button>
+				<button type="button" class="btn"><span class="keyword">학원</span><span class="num">751</span></button>
+				<button type="button" class="btn"><span class="keyword">호러</span><span class="num">355</span></button>
+			</div>
+      </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn searchBtn" onclick="showSearch()">건너뛰기</button>
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">닫기</button>
+		<button type="button" class="btn btn-primary addBtn">완료</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

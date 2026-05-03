@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+<script src="js/st_store.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+<header id="st-head">
+	<h2 class="tit">스토어</h2>
+	<button type="button" class="btn user-menu" onclick="menuToggle()">
+		<img src="./image/common/default_profile.png"/>
+	</button>
+</header>
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<aside id="st-menu">
+	<div class="fixedbg"></div>
+	<div class="inner">
+		<div class="st-logo bor">
+			<a class="ap-logo">ALP<span>HATYPE</span></a>
+		</div>
+		<div class="st-h bor">
+			<button type="button" class="btn btn-ch">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h3>알파플러스 채널</h3>
+			</button>
+			<div class="btns">
+				<button type="button" class="btn btn-primary btn-write"><i class="fas fa-plus"></i><h3>새 포스트 쓰기</h3></button>
+			</div>
+		</div>
+		<div class="st-b ">
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-columns"></i>
+				<h3>대시보드</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-clone"></i>
+				<h3>포스트</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-book"></i>
+				<h3>시리즈</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-chart-bar"></i>
+				<h3>통계</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-user-plus n-ico"></i>
+				<h3>커뮤니티</h3>
+			</button>
+			<button type="button" class="btn btn-nabar btn-active">
+				<i class="fas fa-shopping-basket"></i>
+				<h3>스토어</h3>
+				<span class="beta">베타</span>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fab fa-mastodon"></i>
+				<h3>멤버십</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-user n-ico"></i>
+				<h3>구독자</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-cog n-ico"></i>
+				<h3>설정</h3>
+			</button>
+		</div>
+	</div>
+</aside>
+<nav id="m_menu">
+	<button type="button" class="btn btn-nabar btn-active">
+		<i class="fas fa-columns"></i>
+		<h3>대시보드</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="far fa-clone"></i>
+		<h3>포스트</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-chart-bar"></i>
+		<h3>통계</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-shopping-basket"></i>
+		<h3>스토어</h3>
+	</button>
+	<button type="button" class="btn btn-nabar btn-menu">
+		<i class="fas fa-bars"></i>
+		<h3>모바일메뉴</h3>
+	</button>
+</nav>
+
+<section id="ss-main" class="ss-main">
+	<article class="sec01">
+		<img src="./image/store/ss.png"/>
+		<p>손에 잡히는 작품, 더 많은 수익</p>
+		<h3>알파타입에서 실물 상품을<br/>판매해보세요.</h3>
+		<button type="button" class="btn btn-primary">상품 등록하기</button>
+	</article>
+	<article class="sec02">
+		<h4>스토어가 무엇인가요?</h4>
+		<p>내 채널에서 실물 상품을 팔 수 있는 기능이에요.<br/>구매자가 입력한 주소지로 상품을 배송하고 정산을 받을 수 있어요.</p>
+		<div class="how-sale">
+			<h4>판매는 어떻게 진행되나요?</h4>
+			<div class="box">
+				<div class="col-b">
+					<div class="thumb"><img src="./image/store/sale1.png"/></div>
+					<h4><span class="blue">STEP 1.</span> 상품을 등록해요</h4>
+					<p>판매할 상품을 등록하면 내 채널의 스토어 탭에 올라가요.</p>
+				</div>
+				<div class="col-b">
+					<div class="thumb"><img src="./image/store/sale2.png"/></div>
+					<h4><span class="blue">STEP 2.</span> 주문을 확인해요</h4>
+					<p>알림을 받고 주문 정보를 확인해요.</p>
+				</div>
+				<div class="col-b">
+					<div class="thumb"><img src="./image/store/sale3.png"/></div>
+					<h4><span class="blue">STEP 3.</span> 상품을 보내고 운송장을 입력해요</h4>
+					<p>정산을 받으려면 운송장을 꼭 입력해 주세요.</p>
+				</div>
+				<div class="col-b">
+					<div class="thumb"><img src="./image/store/sale4.png"/></div>
+					<h4><span class="blue">STEP 4.</span> 구매가 확정되면 수익에 더해져요</h4>
+					<p>배송 완료 7일 후, 구매가 확정되면 출금 가능 금액에 더해져요.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="sec03">
+		<h4>이런 기능을 쓸 수 있어요</h4>
+		<div class="how-func">
+			<div class="col-f">
+				<i class="fas fa-credit-card"></i>
+				<div class="info">
+					<h4>자동으로 결제가 확인돼요</h4>
+					<p>구매자가 결제에 성공하면 자동으로 결제 완료로 처리돼요.</p>
+				</div>
+			</div>
+			<div class="col-f">
+				<i class="fas fa-file-medical"></i>
+				<div class="info">
+					<h4>운송장을 한 번에 업로드할 수 있어요</h4>
+					<p>운송장 업로드 기능으로 많은 주문을 한 번에 발송 처리할 수 있어요.</p>
+				</div>
+			</div>
+			<div class="col-f">
+				<i class="fas fa-user-check"></i>
+				<div class="info">
+					<h4>성인에게만 판매하고 싶다면</h4>
+					<p>성인으로 인증된 사람에게만 상품을 팔 수 있어요.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="sec04">
+		<h4>자주 묻는 질문</h4>
+		<div class="qna-list">
+			<div class="col-q">
+				<button type="button" class="q">
+					<p>수수료는 얼마인가요?</p>
+					<i class="fas fa-chevron-up"></i>
+				</button>
+				<div class="a">
+					<ul>
+						<li>크리에이터가 안정적인 수익을 바탕으로 창작 활동에 집중할 수 있도록, 수수료를 3%로 제공하고 있어요. (부가가치세, 이체 수수료 미포함)</li>
+						<li>수수료는 출금될 때 수익에서 차감돼요.</li>
+						<li><strong>수수료 3%는 베타 서비스 기간에만 적용</strong>됩니다. 베타 서비스 종료 후 수수료가 인상될 수 있습니다.</li>
+					</ul>
+					<button type="button" class="btn btn-more">더 알아보기</button>
+				</div>
+			</div>
+			<div class="col-q">
+				<button type="button" class="q">
+					<p>판매한 수익은 어떻게 받을 수 있나요?</p>
+					<i class="fas fa-chevron-up"></i>
+				</button>
+				<div class="a">
+					<ul>
+						<li>배송 후 운송장 번호를 꼭 입력해야 해요. 운송장을 바탕으로 실제로 배송이 되었는지 확인하기 때문이에요.</li>
+						<li>배송이 완료되고 7일이 지나면 ‘구매 확정’으로 상태가 바뀌어요. 구매가 확정된 금액은 <strong>[알파타입 홈] > [포인트/수익] > [내 수익]</strong>에 더해지고, 정해진 날짜에 자동 출금돼요.</li>
+						<li>구매자가 상품을 받았지만, 배송 완료로 조회되지 않는다면 포스타입 메시지를 통해 <strong>‘구매 확정’</strong>을 요청해 보세요.</li>
+					</ul>
+					<button type="button" class="btn btn-more">더 알아보기</button>
+				</div>
+			</div>
+			<div class="col-q">
+				<button type="button" class="q">
+					<p>결제 수단은 어떤 게 있나요?</p>
+					<i class="fas fa-chevron-up"></i>
+				</button>
+				<div class="a">
+					<ul>
+						<li>구매자는 카드 간편 결제, 신용 카드를 통해서 상품을 결제할 수 있어요.</li>
+						<li>구매자와 판매자의 안전한 거래를 위해 <strong>무통장 입금은 지원하지 않아요.</strong></li>
+					</ul>
+					<button type="button" class="btn btn-more">더 알아보기</button>
+				</div>
+			</div>
+			<div class="col-q">
+				<button type="button" class="q">
+					<p>결제 취소나 환불은 어떻게 이루어지나요?</p>
+					<i class="fas fa-chevron-up"></i>
+				</button>
+				<div class="a">
+					<ul>
+						<li>배송 전이라면 ‘결제 취소’, 배송이 되었다면 ‘환불’을 할 수 있어요.</li>
+						<li>구매자는 일방적으로 결제를 취소할 수 없어요. 상품이 이미 준비되었을 수 있기 때문이에요.</li>
+						<li>구매자가 결제 취소나 환불을 요청하면 나에게 알림이 와요. 구매자가 오래 기다리지 않도록, 빠른 시일 내에 승인 혹은 거절을 해주세요.</li>
+					</ul>
+					<button type="button" class="btn btn-more">더 알아보기</button>
+				</div>
+			</div>
+			<div class="col-q">
+				<button type="button" class="q">
+					<p>알림은 언제 어떻게 받을 수 있나요?</p>
+					<i class="fas fa-chevron-up"></i>
+				</button>
+				<div class="a">
+					<ul>
+						<li>상품을 등록하면 아래의 알림들을 받을 수 있어 편리해요.</li>
+						<li>알림은 <strong>[알파타입 홈] > [My 메뉴] > [알림]</strong>에서 확인할 수 있어요.</li>
+						<li>알림을 놓치지 않으려면 포스타입 앱을 설치하는 것을 추천해요.</li>
+						<li>앱이 이미 설치되어 있다면 알림 설정에서 기기 알림이 켜져 있는지 확인해 보세요.</li>
+					</ul>
+					<button type="button" class="btn btn-more">더 알아보기</button>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+
+</div>
+</body>
+</html>

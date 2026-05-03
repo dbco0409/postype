@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="js/script.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALPHATYPE</a>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="searchfrm">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<a class="btn-search-m"><i class="fas fa-search"></i></a>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-plus-square"></i>
+				</button>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-bell"></i>
+					<em class="bedge bell-bedge">2</em>
+				</button>
+				<button type="button" class="btn btn-message">
+					<i class="far fa-envelope"></i>
+					<em class="bedge msg-bedge">2</em>
+				</button>
+				<button type="button" class="btn user-menu" onclick="menuToggle()">
+					<img src="./image/common/default_profile.png"/>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="m-search-box">
+	<div class="search">
+		<form name="search-form" class="searchfrm">
+			<div class="group">
+				<i class="fas fa-search"></i>
+				<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+			</div>
+		</form>
+		<a class="close-box">닫기</a>
+	</div>
+</nav>
+
+<section class="chh-head" id="channel-head">
+	<div class="wrap">
+		<div class="content">
+			<div class="thumb">
+				<img src="./image/thumb/channel_thumb.webp"/>
+			</div>
+			<div class="info">
+				<a href="" class="tit">부산일러스트레이션페어</a>
+				<div class="c-info">
+					<a href="" class="name">오씨메이커스</a>
+					 · 
+					<p class="in-t">구독자</p>
+					<p class="in-n">11명</p>
+					 · 
+					<p class="in-t">포스트</p>
+					<p class="in-n">2개</p>
+				</div>
+				<div class="c-desc">'부산일러스트레이션페어V.5'가 2024년 11월 1일(금)부터 3일(일)까지 3일간 부산 벡스코에서... <a class="more"><i class="fas fa-chevron-right"></i></a></div>
+			</div>
+		</div>
+		<div class="menu">
+			<button type="button" class="btn btn-dark btn-subscribe">구독</button>
+			<button type="button" class="btn btn-light btn-share"><i class="fas fa-external-link-alt"></i></button>
+		</div>
+	</div>
+	<nav class="sub-navbar">
+		<div class="inner">
+			<li><a href="channel_home.html">홈</a></li>
+			<li><a href="channel_post.html">포스트</a></li>
+			<li><a href="channel_series.html">시리즈</a></li>
+			<li><a href="channel_community.html" class="active">커뮤니티</a></li>
+			<li><a href="channel_store.html">스토어</a></li>
+			<li><a href="channel_membership.html">멤버십</a></li>
+			<li><a href="#"><i class="fas fa-search"></i></a></li>
+		</div>
+	</nav>
+</section>
+
+<section class="cm-body body" id="cmm-body">
+	<div class="cm-nav">
+		<button type="button" class="btn btn-dark btn-write" onclick="location.href='login.html'"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.938 4.813A.935.935 0 0 0 12 3.875a.935.935 0 0 0-.938.938v6.25h-6.25a.935.935 0 0 0-.937.937c0 .52.418.938.938.938h6.25v6.25c0 .519.417.937.937.937s.938-.418.938-.938v-6.25h6.25c.519 0 .937-.417.937-.937a.935.935 0 0 0-.938-.938h-6.25v-6.25Z" fill="currentColor"></path></svg> 게시글 쓰기</button>
+		<nav class="nav-cm-btns">
+			<em>게시판</em>
+			<button type="button" class="btn active">전체</button>
+			<button type="button" class="btn">자유게시판</button>
+			<button type="button" class="btn">포스트 댓글</button>
+			<button type="button" class="btn">질문</button>
+		</nav>
+	</div>
+	<div class="cm-list">
+		<div class="cmw-frm" onclick="location.href='login.html'">
+			<img src="./image/common/default_profile.png">
+			<p>로그인하고 게시글을 작성해보세요</p>
+		</div>
+		<div class="cmv-list">
+			<div class="cmv-check">
+				<label for="onlyView" class="custom-checkbox strong">
+					<input type="checkbox" id="onlyView" value="1"/>
+					<span class="checkmark"></span>
+					크리에이터의 글만 보기
+				</label>
+			</div>
+			<div class="cmv-row">
+				<div class="cmv-col">
+					<div class="c-profile">
+						<img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp">
+						<div class="c-info">
+							<h4>온정</h4>
+							<p>4일 전<span>·</span>포스트 댓글</p>
+						</div>
+						<button type="button" class="btn btn-more btn-toggle" data-target="cmv-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="cmv-more-toggle-01" class="more-toggle">
+							<li><a>게시글 신고</a></li>
+						</ul>
+					</div>
+					<div class="c-content">
+						ㅠㅠㅠ가고싶어요 가고싶어요!!! 대전이지만 시간되면 꼭 갈게요!!
+						<div class="c-profile">
+							<img src="./image/thumb/35e744c29b4491bec22ed08076cf532c.webp"/>
+							<div class="c-info">
+								<h4>10월 전시 홍보 만화</h4>
+								<p>전시 기간 10월 1일~ 10월 6일 장소 천안 제이 갤러리 (천안 동남구 터미널 3길 12 1층 제이갤러리) ----------------------------------- 올해는 아무것도 없이 평범하게 지나갈까~ 했는데 전시가 있습니다! 시간이 되신다면! 작품에 관심이 있으시다면 방문해주시면 기쁘겠습니다 행복한 10월을 함께 시작해봐요!  이메일 dabichlee05@gmail.com</p>
+							</div>
+							<button type="button" class="btn btn-view"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.416 11.332a.934.934 0 0 1 0 1.325l-7.5 7.504a.937.937 0 0 1-1.324-1.324L14.428 12l-6.84-6.84a.937.937 0 0 1 1.324-1.324l7.504 7.495Z" fill="currentColor"></path></svg></button>
+						</div>
+					</div>
+					<div class="c-footer">
+						<div class="cl">
+							<button type="button" class="btn btn-like"><i class="far fa-heart"></i>1</button>
+							<button type="button" class="btn btn-comment"><i class="far fa-comment"></i>1</button>
+							<div class="c-love">
+								<img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp">
+								<span><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2"><path d="M7.313 3.268a5.319 5.319 0 0 0-3.761 1.585A5.492 5.492 0 0 0 2 8.667c0 1.415.566 2.81 1.552 3.814l7.86 8.004c.323.33.853.33 1.177 0l7.859-8.004A5.444 5.444 0 0 0 22 8.667c0-1.428-.557-2.8-1.552-3.814a5.27 5.27 0 0 0-3.76-1.585 5.27 5.27 0 0 0-3.761 1.585L12 5.797l-.927-.944a5.319 5.319 0 0 0-3.76-1.585Z" fill="currentColor"></path></svg></span>
+							</div>
+						</div>
+						<div class="cr">
+							<button type="button" class="btn btn-share"><i class="fas fa-share-square"></i></button>
+						</div>
+					</div>
+					<div class="c-cmt">
+						<img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp">
+						<h4>Naho (NA...</h4>
+						<p>와! 귀여운 털뭉치 친구들의 그림과 좋은 시간을 보내실 수 있다면 좋겠네요! 감사합니다~</p>
+					</div>
+				</div>
+				<div class="cmv-col">
+					<div class="c-profile">
+						<img src="./image/common/default_profile.png">
+						<div class="c-info">
+							<h4>노루</h4>
+							<p>4일 전<span>·</span>포스트 댓글</p>
+						</div>
+						<button type="button" class="btn btn-more btn-toggle" data-target="cmv-more-toggle-02"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="cmv-more-toggle-02" class="more-toggle">
+							<li><a>게시글 신고</a></li>
+						</ul>
+					</div>
+					<div class="c-content">
+						팬인데. , 너무 멀어요
+						<div class="c-profile">
+							<img src="./image/thumb/35e744c29b4491bec22ed08076cf532c.webp"/>
+							<div class="c-info">
+								<h4>10월 전시 홍보 만화</h4>
+								<p>전시 기간 10월 1일~ 10월 6일 장소 천안 제이 갤러리 (천안 동남구 터미널 3길 12 1층 제이갤러리) ----------------------------------- 올해는 아무것도 없이 평범하게 지나갈까~ 했는데 전시가 있습니다! 시간이 되신다면! 작품에 관심이 있으시다면 방문해주시면 기쁘겠습니다 행복한 10월을 함께 시작해봐요!  이메일 dabichlee05@gmail.com</p>
+							</div>
+							<button type="button" class="btn btn-view"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.416 11.332a.934.934 0 0 1 0 1.325l-7.5 7.504a.937.937 0 0 1-1.324-1.324L14.428 12l-6.84-6.84a.937.937 0 0 1 1.324-1.324l7.504 7.495Z" fill="currentColor"></path></svg></button>
+						</div>
+					</div>
+					<div class="c-footer">
+						<div class="cl">
+							<button type="button" class="btn btn-like"><i class="far fa-heart"></i>1</button>
+							<button type="button" class="btn btn-comment"><i class="far fa-comment"></i>1</button>
+							<div class="c-love">
+								<img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp">
+								<span><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2"><path d="M7.313 3.268a5.319 5.319 0 0 0-3.761 1.585A5.492 5.492 0 0 0 2 8.667c0 1.415.566 2.81 1.552 3.814l7.86 8.004c.323.33.853.33 1.177 0l7.859-8.004A5.444 5.444 0 0 0 22 8.667c0-1.428-.557-2.8-1.552-3.814a5.27 5.27 0 0 0-3.76-1.585 5.27 5.27 0 0 0-3.761 1.585L12 5.797l-.927-.944a5.319 5.319 0 0 0-3.76-1.585Z" fill="currentColor"></path></svg></span>
+							</div>
+						</div>
+						<div class="cr">
+							<button type="button" class="btn btn-share"><i class="fas fa-share-square"></i></button>
+						</div>
+					</div>
+					<div class="c-cmt">
+						<img src="./image/profile/c9592401f8912cc501f4e938d9fa081b.webp">
+						<h4>Naho (NA...</h4>
+						<p>다른 지역에서도 전시할 수 있는 기회가 생기면 좋겠네요 전시 사진은 sns에도 업로드 예정입니다! 업로드하게 되면 포스타입 커뮤니티로 링크 올려보겠습니다</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+		<ul class="f-menu">
+			<li><a href="#">서비스 소개</a></li>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">청소년보호정책</a></li>
+			<li><a href="#">도움 센터</a></li>
+			<li><a href="#">권리침해신고센터</a></li>
+			<li><a href="#">공식 채널</a></li>
+			<li><a href="#">회사 소개・문의</a></li>
+			<li class="copy">© ALPHATYPE, Inc.</li>
+		</ul>
+		<address>
+            <span>주식회사 알파타입</span>
+            <span>사업자등록번호: 000-00-000000</span>
+            <span>통신판매업신고번호: 2024-서울00-00000</span>
+            <span>대표자명: 000</span><br/>
+            <span>주소: 서울시 강남구 테헤란로4길 5, 6층</span>
+            <span>연락처: 02-6956-0827</span>
+        </address>
+		<span class="guide">알파타입은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 알파타입은 콘텐츠, 거래정보 및 거래에 대하여 책임을 지지 않습니다.</span>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

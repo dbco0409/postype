@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/message.js"></script>
+<script src="js/postview.js"></script>
+<script src="js/storeview.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header bor nofixed">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALP</a>
+				<a class="ch-name">지구의 보물상자</a>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="searchfrm">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<a class="btn-search-m"><i class="fas fa-search"></i></a>
+				<a href="login.html" class="btn-login">로그인</a>
+				<a href="register.html" class="btn btn-register btn-outline-primary">회원가입</a>
+			</div>
+		</div>
+	</nav>
+	<section class="chv-head" id="poatv-head">
+		<div class="cl">
+			<button type="button" class="btn"><i class="fas fa-arrow-left"></i></button>
+		</div>
+		<div class="cr">
+			<button type="button" class="btn btnShare" onclick="$('#shareModal').modal('show');"><i class="fas fa-external-link-alt"></i></button>
+			<button type="button" class="btn btn-more btn-toggle" data-target="pv-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+			<ul id="pv-more-toggle-01" class="more-toggle">
+				<li class="resize"><button type="button" class="btn btnminus"><i class="fas fa-minus"></i></button><span>가</span><button type="button" class="btn btnplus"><i class="fas fa-plus"></i></button></li>
+				<li class="darkmode">
+					<div class="form-check form-switch">
+					  <label class="form-check-label" for="darkmod">다크모드</label>
+					  <input class="form-check-input" type="checkbox" id="darkmod">
+					</div>
+				</li>
+				<li><a>컬렉션에 추가하기</a></li>
+				<li><a>신고하기</a></li>
+			</ul>
+		</div>
+	</section>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="m-search-box">
+	<div class="search">
+		<form name="search-form" class="searchfrm">
+			<div class="group">
+				<i class="fas fa-search"></i>
+				<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+			</div>
+		</form>
+		<a class="close-box">닫기</a>
+	</div>
+</nav>
+
+<section class="chv-body" id="poatv-body">
+	<div class="store-h">
+		<div class="img">
+			<img src="./image/thumb/500d6f4089573181090848429.webp"/>
+		</div>
+		<div class="v">
+			<div class="v-info">
+				<div class="status">
+					<span class="onsale">판매중</span>
+				</div>
+				<h3>💎천연 백수정 💙말레이시아 옥 인디블루 피란테✨ 키링</h3>
+				<p class="price">23,000원</p>
+			</div>
+			<div class="c-profile">
+				<img src="./image/profile/profile2.webp"/>
+				<div class="c-info">
+					<h4>ggoo</h4>
+					<p>등록일 2024.10.02</p>
+				</div>
+			</div>
+			<input type="hidden" name="opt">
+			<div class="fixed-pop" id="fixedPop">
+				<div class="bgpop"></div>
+				<div class="pop-content">
+					<h4 class="hide">상품옵션<span class="blue">*</span></h4>
+					<div class="selectGroup">
+						<button type="button" class="btn btn-selected input-control" id="selectButton">옵션을 선택해주세요.</button>
+						<div class="opt" id="options">
+							<div class="opt-col" data-name="피란테✨ 키링" data-price="23000">
+								<img src="./image/thumb/500d6f4089573181090848429.webp"/>
+								<div class="opt-info">
+									<h4>피란테✨ 키링</h4>
+									<p class="num">99999개 남음</p>
+									<p class="price">23,000원</p>
+								</div>
+							</div>
+							<div class="opt-col" data-name="장미꽃 뜨개 키링" data-price="6000">
+								<img src="./image/thumb/a78c9914154173863464764431.webp"/>
+								<div class="opt-info">
+									<h4>장미꽃 뜨개 키링</h4>
+									<p class="num">100개 남음</p>
+									<p class="price">6,000원</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="result">
+						<div class="sel-r"></div>
+					</div>
+					<div class="btns">
+						<button type="button" class="btn btn-dark btn-order">주문하기</button>
+					</div>
+				</div>
+			</div>
+			<div class="fixed-m">
+				<button type="button" class="btn btn-dark show-order">주문하기</button>
+			</div>
+		</div>
+	</div>
+	<ul class="store-info">
+		<li><span>판매 오픈</span>2024.10.02. 09:51</li>
+		<li><span>판매 종료</span>상시 판매</li>
+	</ul>
+	<div class="chv-b">
+		<h5 class="no-mb">상품 정보</h5>
+		<div class="content">
+			<p><br/></p>
+			🍀천연 블루 말레이시아 옥과 <p><br/></p>
+
+			천연 백수정 손커팅석으로  <p><br/></p><p><br/></p>
+
+			고급스러운 포인트를 드릴게요<p><br/></p><p><br/></p><p><br/></p>
+
+			🎁선물용으로도 추천드려요!😊<p><br/></p>
+			<div class="thumb">
+				<img src="./image/thumb/c2b5dd8664032541559189127.webp"/>
+				<img src="./image/thumb/f72f453746675099873330008.webp"/>
+			</div>
+			<p><br/></p>
+			<p><br/></p>
+			💎
+			<p><br/></p><p><br/></p>
+			재료:<p><br/></p>
+
+			🌿💙천연 블루 말레이시아 옥 8mm 비드💙<p><br/></p>
+
+			천연 원석의 특성 상, 간혹 원석 속에 뭉친듯한 마블링,<p><br/></p>
+
+			 어두운 색 점이나 무늬가 보일 수 있습니다. <p><br/></p>
+
+			*실제로 보시면 톤다운된, 차분한 하늘색 색감이예요!*<p><br/></p>
+
+			흔하지 않은 색감이 오묘하게 정말 예뻐요<p><br/></p><p><br/></p>
+
+			+<p><br/></p>
+
+			 ✨천연 백수정(크리스탈) 9~10mm 손커팅석✨<p><br/></p>
+
+			손으로 하나하나 깎아낸 천연 크리스탈 원석입니다.<p><br/></p>
+
+			+<p><br/></p>
+
+			아크릴 참<p><br/></p>
+
+			+<p><br/></p>
+
+			신주 참 <p><br/></p><p><br/></p><p><br/></p>
+
+
+			<p><br/></p>
+
+			키링, 파우치참, 백참 등 여러가지로 활용 해 보세요! <p><br/></p>
+
+			어디에서든 유니크한 디자인과 색감으로 활기를 드릴게요! <p><br/></p>
+
+			힐링스톤으로 알려진 천연원석과함께 복잡해진 마음의 차분함을 느껴보시기를 바랍니다. <p><br/></p><p><br/></p><p><br/></p>
+
+			주의사항:<p><br/></p>
+
+			✔천연 원석은 원석마다 색상과 모양 차이가 있을 수 있으며, 크랙이 있습니다.✔
+		</div>
+		<div class="store-group">
+			<div class="store-txt">
+				<h5>배송 안내</h5>
+				<div class="txts">
+					<p>평일 오전11시 이전 주문시, 당일배송</p>
+				</div>
+			</div>
+			<div class="store-txt">
+				<h5>취소 및 환불 안내</h5>
+				<div class="txts">
+					<h6>판매자의 정책이니 꼼꼼하게 확인해주세요.</h6>
+					<p>천연원석의 특성을 이유로는 환불이 어렵습니다. 발송 전 취소는 가능합니다.</p>
+				</div>
+			</div>
+		</div>
+		<div class="post-tags">
+			<span>키링</span>
+			<span>악세서리</span>
+			<span>패션잡화</span>
+			<span>원석키링</span>
+			<span>천연원석</span>
+		</div>
+	</div>
+	<div class="wbook">
+		<div class="profile-info">
+			<div class="profile-img">
+				<img src="./image/profile/profile2.webp"/>
+			</div>
+			<div class="name">
+				<h4><a href="channel_home.html">패스트캠퍼스</a></h4>
+				<p>구독자 10명</p>
+			</div>
+		</div>
+		<div class="btns">
+			<button type="button" class="btn btn-light" onclick="msgShow()">메시지 쓰기</button>
+			<button type="button" class="btn btn-dark">구독하기</button>
+		</div>
+	</div>
+</section>
+<section class="chh-body chv-body body" id="otheritem-body">
+	<div class="chh-b">
+		<div class="post-head">
+			<h2 class="tit">다른 채널의 신규 상품</h2>
+			<div class="post-right">
+				<a href="channel_store.html">더보기</a>
+			</div>
+		</div>
+		<div class="post-gallery swiper-container">
+			<div class="swiper-wrapper">
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/7f4a4e4961109256889996405.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">감 뜨개 키링</h5>
+						<p class="price"><span>6,000원</span> · 옵션 2개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/7f4a4e4961109256889996405.webp"/></div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb2.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">핸드메이드 원형바닥 파우치 </h5>
+						<p class="price"><span>16,500원</span> · 옵션 1개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb22.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">엄마 손 뜨개 수세미</h5>
+						<p class="price"><span>5,000원</span> · 옵션 10개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">💎천연 백수정 💙말레이시아 옥 인디블루 피란테✨ 키링�</h5>
+						<p class="price"><span>23,000원</span> · 옵션 1개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb22.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">엄마 손 뜨개 수세미</h5>
+						<p class="price"><span>5,000원</span> · 옵션 10개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">💎천연 백수정 💙말레이시아 옥 인디블루 피란테✨ 키링�</h5>
+						<p class="price"><span>23,000원</span> · 옵션 1개</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-button-next"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-sizeMd joy-1wkvxhg"><path d="M16.416 11.332a.934.934 0 0 1 0 1.325l-7.5 7.504a.937.937 0 0 1-1.324-1.324L14.428 12l-6.84-6.84a.937.937 0 0 1 1.324-1.324l7.504 7.495Z" fill="currentColor"></path></svg></div>
+	</div>
+</section>
+<section class="store-f" id="store_footer">
+	<p>스토어 상품에 문제가 있나요? <a href="#" class="bold">신고하기</a></p>
+	<p>주식회사 포스타입은 회원 상호 간 콘텐츠 거래를 위한 통신판매중개 시스템을 제공할 뿐, 통신판매자를 대리하지 않습니다. 구매한 상품에 대한 취소, 환불 등 회원 간 성립된 거래에 대한 모든 책임은 회원이 직접 부담합니다. 자세한 내용은 서비스 이용 전 동의하신 <a href="#" class="underline">이용약관</a>을 참고해주세요.</p>
+</section>
+
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">공유하기</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="sns-list">
+				<div><button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.77 12.775 3.343 20H6.19l4.92-5.544L15.448 20 21 19.97l-7.04-9.164 6.008-6.775L17.166 4l-4.539 5.091-3.883-5.083L3 4.002l6.77 8.773Zm7.867 5.561-1.437-.004L6.326 5.608h1.546l9.765 12.728Z" fill="currentColor"></path></svg>
+				</button>
+				<p>X</p>
+				</div>
+				<div>
+				<button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m16.88 13.25.572-3.594h-3.635V7.312c0-1.015.49-1.953 2.124-1.953h1.674V2.273S16.105 2 14.675 2c-2.981 0-4.942 1.758-4.942 4.883v2.773H6.385v3.594h3.348V22h4.084v-8.75h3.063Z" fill="#1877F2"></path></svg>
+				</button>
+				<p>페이스북</p>
+				</div>
+			</div>
+			<div class="sns-url">
+				<div class="copy-url">
+					<input type="text" class="copy" readonly>
+				</div>
+				<button type="button" class="btn copyBtn">URL복사</button>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pop message-pop" id="messageSend">
+	<div class="popbg"></div>
+	<div class="container">
+		<div class="pop-header">
+			<div class="c-profile">
+				<img src="./image/profile/profile2.webp"/>
+				<h3>라떼떼 포르투나</h3>
+			</div>
+			<div class="msg-menu">
+				<button type="button" class="btn btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+				<ul id="tbp-more-toggle-01" class="more-toggle">
+					<li><a>메시지 차단</a></li>
+					<li><a>대화방 삭제</a></li>
+				</ul>
+				<button type="button" class="btn btn-close01 btn-message-close"><i class="fas fa-times"></i></button>
+			</div>
+		</div>
+		<div class="pop-body"></div>
+		<div class="pop-footer">
+			<div class="msg-frm">
+				<form>
+					<input type="text" class="input-txt" placeholder="메시지를 입력하세요.">
+					<button type="button" class="btn msgBtn"><i class="fas fa-arrow-up"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

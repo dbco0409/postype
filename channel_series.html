@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="js/script.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALPHATYPE</a>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="searchfrm">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<a class="btn-search-m"><i class="fas fa-search"></i></a>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-plus-square"></i>
+				</button>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-bell"></i>
+					<em class="bedge bell-bedge">2</em>
+				</button>
+				<button type="button" class="btn btn-message">
+					<i class="far fa-envelope"></i>
+					<em class="bedge msg-bedge">2</em>
+				</button>
+				<button type="button" class="btn user-menu" onclick="menuToggle()">
+					<img src="./image/common/default_profile.png"/>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="m-search-box">
+	<div class="search">
+		<form name="search-form" class="searchfrm">
+			<div class="group">
+				<i class="fas fa-search"></i>
+				<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+			</div>
+		</form>
+		<a class="close-box">닫기</a>
+	</div>
+</nav>
+
+<section class="chh-head" id="channel-head">
+	<div class="wrap">
+		<div class="content">
+			<div class="thumb">
+				<img src="./image/thumb/channel_thumb.webp"/>
+			</div>
+			<div class="info">
+				<a href="" class="tit">부산일러스트레이션페어</a>
+				<div class="c-info">
+					<a href="" class="name">오씨메이커스</a>
+					 · 
+					<p class="in-t">구독자</p>
+					<p class="in-n">11명</p>
+					 · 
+					<p class="in-t">포스트</p>
+					<p class="in-n">2개</p>
+				</div>
+				<div class="c-desc">'부산일러스트레이션페어V.5'가 2024년 11월 1일(금)부터 3일(일)까지 3일간 부산 벡스코에서... <a class="more"><i class="fas fa-chevron-right"></i></a></div>
+			</div>
+		</div>
+		<div class="menu">
+			<button type="button" class="btn btn-dark btn-subscribe">구독</button>
+			<button type="button" class="btn btn-light btn-share"><i class="fas fa-external-link-alt"></i></button>
+		</div>
+	</div>
+	<nav class="sub-navbar">
+		<div class="inner">
+			<li><a href="channel_home.html">홈</a></li>
+			<li><a href="channel_post.html">포스트</a></li>
+			<li><a href="channel_series.html" class="active">시리즈</a></li>
+			<li><a href="#">커뮤니티</a></li>
+			<li><a href="channel_store.html">스토어</a></li>
+			<li><a href="channel_membership.html">멤버십</a></li>
+			<li><a href="#"><i class="fas fa-search"></i></a></li>
+		</div>
+	</nav>
+</section>
+
+<section class="chh-body body" id="channel-body">
+	<div class="chh-b">
+		<div class="post-head">
+			<h2 class="tit">시리즈 6개</h2>
+			<div class="post-right">
+				<a href="#">기본순</a>
+				<span>|</span>
+				<a href="#" class="active">최신순</a>
+				<span>|</span>
+				<a href="#">인기순</a>
+			</div>
+		</div>
+		<div class="post-series mtb-20">
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/9d858f6884615172748901096.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>단편&습작 만화</h3>
+					<p>단편만화들을 모았습니다.</p>
+					<p class="sm">단편 / 6화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/ce14cb8acf7dc9f100df005f7956fd8a.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>용마메/무마춰 크로우&유바르 이야기</h3>
+					<p>창작 GL 만화 용마메와 무마춰의 마왕 크로우 & 13대 용사 유바르의 이야기, 일러스트, 낙서 등등이 올라옵니다.</p>
+					<p class="sm">완결 / 4화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<div class="no-thumb">ALPHATYPE</div>
+					<span class="bedge19">성인</span>
+				</div>
+				<div class="post-content">
+					<h3>백합 안하면 못 나가는 방</h3>
+					<p class="sm">연재 / 2화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/a33b1f17210782207300145171.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>추악한 여자가 소환되었다</h3>
+					<p>창작 GL 단편 웹툰 약칭 추여소 여미새녀×소심음침녀</p>
+					<p class="sm">단편 / 4화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/ce14cb8acf7dc9f100df005f7956fd8a.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>용마메/무마춰 크로우&유바르 이야기</h3>
+					<p>창작 GL 만화 용마메와 무마춰의 마왕 크로우 & 13대 용사 유바르의 이야기, 일러스트, 낙서 등등이 올라옵니다.</p>
+					<p class="sm">완결 / 4화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<div class="no-thumb">ALPHATYPE</div>
+					<span class="bedge19">성인</span>
+				</div>
+				<div class="post-content">
+					<h3>백합 안하면 못 나가는 방</h3>
+					<p class="sm">연재 / 2화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-paging">
+			<a class="first none"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.713 11.332a.934.934 0 0 0 0 1.325l5.25 5.254a.937.937 0 0 0 1.324-1.324l-4.586-4.59 4.59-4.586a.937.937 0 0 0-1.324-1.324l-5.254 5.245Z" fill="currentColor"></path></svg></a>
+			<a class="current">1</a>
+			<a class="end none"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-sizeMd joy-r76t58"><path d="M15.291 11.332a.934.934 0 0 1 0 1.325l-5.25 5.254a.937.937 0 0 1-1.324-1.324L13.303 12l-4.59-4.59a.937.937 0 0 1 1.324-1.324l5.254 5.245Z" fill="currentColor"></path></svg></a>
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+		<ul class="f-menu">
+			<li><a href="#">서비스 소개</a></li>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">청소년보호정책</a></li>
+			<li><a href="#">도움 센터</a></li>
+			<li><a href="#">권리침해신고센터</a></li>
+			<li><a href="#">공식 채널</a></li>
+			<li><a href="#">회사 소개・문의</a></li>
+			<li class="copy">© ALPHATYPE, Inc.</li>
+		</ul>
+		<address>
+            <span>주식회사 알파타입</span>
+            <span>사업자등록번호: 000-00-000000</span>
+            <span>통신판매업신고번호: 2024-서울00-00000</span>
+            <span>대표자명: 000</span><br/>
+            <span>주소: 서울시 강남구 테헤란로4길 5, 6층</span>
+            <span>연락처: 02-6956-0827</span>
+        </address>
+		<span class="guide">알파타입은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 알파타입은 콘텐츠, 거래정보 및 거래에 대하여 책임을 지지 않습니다.</span>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

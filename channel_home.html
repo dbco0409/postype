@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/channel_home.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALPHATYPE</a>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="searchfrm">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<a class="btn-search-m"><i class="fas fa-search"></i></a>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-plus-square"></i>
+				</button>
+				<button type="button" class="btn btn-push">
+					<i class="far fa-bell"></i>
+					<em class="bedge bell-bedge">2</em>
+				</button>
+				<button type="button" class="btn btn-message">
+					<i class="far fa-envelope"></i>
+					<em class="bedge msg-bedge">2</em>
+				</button>
+				<button type="button" class="btn user-menu" onclick="menuToggle()">
+					<img src="./image/common/default_profile.png"/>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="m-search-box">
+	<div class="search">
+		<form name="search-form" class="searchfrm">
+			<div class="group">
+				<i class="fas fa-search"></i>
+				<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+			</div>
+		</form>
+		<a class="close-box">닫기</a>
+	</div>
+</nav>
+
+<section class="chh-head" id="channel-head">
+	<div class="wrap">
+		<div class="content">
+			<div class="thumb">
+				<img src="./image/thumb/channel_thumb.webp"/>
+			</div>
+			<div class="info">
+				<a href="" class="tit">부산일러스트레이션페어</a>
+				<div class="c-info">
+					<a href="" class="name">오씨메이커스</a>
+					 · 
+					<p class="in-t">구독자</p>
+					<p class="in-n">11명</p>
+					 · 
+					<p class="in-t">포스트</p>
+					<p class="in-n">2개</p>
+				</div>
+				<div class="c-desc">'부산일러스트레이션페어V.5'가 2024년 11월 1일(금)부터 3일(일)까지 3일간 부산 벡스코에서... <a class="more"><i class="fas fa-chevron-right"></i></a></div>
+			</div>
+		</div>
+		<div class="menu">
+			<button type="button" class="btn btn-dark btn-subscribe">구독</button>
+			<button type="button" class="btn btn-light btn-share"><i class="fas fa-external-link-alt"></i></button>
+		</div>
+	</div>
+	<nav class="sub-navbar">
+		<div class="inner">
+			<li><a href="channel_home.html" class="active">홈</a></li>
+			<li><a href="channel_post.html">포스트</a></li>
+			<li><a href="channel_series.html">시리즈</a></li>
+			<li><a href="#">커뮤니티</a></li>
+			<li><a href="channel_store.html">스토어</a></li>
+			<li><a href="channel_membership.html">멤버십</a></li>
+			<li><a href="#"><i class="fas fa-search"></i></a></li>
+		</div>
+	</nav>
+</section>
+
+<section class="chh-body body" id="channel-body">
+	<div class="notice-h">
+		<i class="fas fa-chevron-left"></i>
+		<a href="#"><span class="ctg">공지</span>[부일페V.5] 3차 얼리버드 𝙏𝙄𝘾𝙆𝙀𝙏 𝙊𝙋𝙀𝙉🎉</a>
+		<i class="fas fa-chevron-right"></i>
+	</div>
+	<div class="chh-b">
+		<div class="post-head">
+			<h2 class="tit">포스트</h2>
+			<div class="post-right">
+				<a href="channel_post.html">더보기</a>
+			</div>
+		</div>
+		<div class="post-gallery swiper-container">
+			<div class="swiper-wrapper">
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">[부일페V.5] 3차 얼리버드 𝙏𝙄𝘾𝙆𝙀𝙏 𝙊𝙋𝙀𝙉🎉</h5>
+						<p class="desc">마지막 10% 할인 절대 놓치지 마세요!</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>부일페</span>
+							<span>할인</span>
+							<span>일러스트</span>
+							<span>굿즈</span>
+							<span>부산일러스트레이션페어</span>
+						</div>
+						<div class="post-info">
+							<p><i class="far fa-eye"></i> <span>2.7천</span></p>
+							<p><i class="far fa-heart"></i> <span>20</span></p>
+							<p><i class="far fa-comment-dots"></i> <span>1</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">오씨메이커스</span> · <span class="st">2024.09.03</span></p>
+						<div class="post-action">
+							<a><i class="far fa-bookmark"></i></a>
+							<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+							<ul id="tbp-more-toggle-01" class="more-toggle">
+								<li><a>공유하기</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb2.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">플라잉 타이거: 만화로 피어 오른 공중전의 낭만</h5>
+						<p class="desc">SF 소설가 곽재식의 인생 만화 3</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>에세이</span>
+							<span>만화</span>
+							<span>곽재식</span>
+							<span>인생만화</span>
+						</div>
+						<div class="post-info">
+							<p><i class="far fa-eye"></i> <span>3.3천</span></p>
+							<p><i class="far fa-heart"></i> <span>13</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">Jaesik Kwak</span> · <span class="st">2일 전</span></p>
+						<div class="post-action">
+							<a><i class="far fa-bookmark"></i></a>
+							<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-02"><i class="fas fa-ellipsis-h"></i></button>
+							<ul id="tbp-more-toggle-02" class="more-toggle">
+								<li><a>공유하기</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb22.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">헤비메탈6: 할리우드 SF 액션 블록버스터들에 대한 1990년대 한국 만화의 응답</h5>
+						<p class="desc">SF 소설가 곽재식의 인생 만화 2</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>에세이</span>
+							<span>만화</span>
+							<span>곽재식</span>
+							<span>인생만화</span>
+						</div>
+						<div class="post-info">
+							<p><i class="far fa-eye"></i> <span>3.6천</span></p>
+							<p><i class="far fa-heart"></i> <span>17</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">Jaesik Kwak</span> · <span class="st">2일 전</span></p>
+						<div class="post-action">
+							<a><i class="far fa-bookmark"></i></a>
+							<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-03"><i class="fas fa-ellipsis-h"></i></button>
+							<ul id="tbp-more-toggle-03" class="more-toggle">
+								<li><a>공유하기</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">[부일페V.5] 3차 얼리버드 𝙏𝙄𝘾𝙆𝙀𝙏 𝙊𝙋𝙀𝙉🎉</h5>
+						<p class="desc">마지막 10% 할인 절대 놓치지 마세요!</p>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>부일페</span>
+							<span>할인</span>
+							<span>일러스트</span>
+							<span>굿즈</span>
+							<span>부산일러스트레이션페어</span>
+						</div>
+						<div class="post-info">
+							<p><i class="far fa-eye"></i> <span>2.7천</span></p>
+							<p><i class="far fa-heart"></i> <span>20</span></p>
+							<p><i class="far fa-comment-dots"></i> <span>1</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">오씨메이커스</span> · <span class="st">2024.09.03</span></p>
+						<div class="post-action">
+							<a><i class="far fa-bookmark"></i></a>
+							<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+							<ul id="tbp-more-toggle-01" class="more-toggle">
+								<li><a>공유하기</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-button-next"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-sizeMd joy-1wkvxhg"><path d="M16.416 11.332a.934.934 0 0 1 0 1.325l-7.5 7.504a.937.937 0 0 1-1.324-1.324L14.428 12l-6.84-6.84a.937.937 0 0 1 1.324-1.324l7.504 7.495Z" fill="currentColor"></path></svg></div>
+	</div>
+	<div class="chh-b">
+		<div class="post-head">
+			<h2 class="tit">시리즈</h2>
+			<div class="post-right">
+				<a href="channel_series.html">더보기</a>
+			</div>
+		</div>
+		<div class="post-series">
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/9d858f6884615172748901096.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>단편&습작 만화</h3>
+					<p>단편만화들을 모았습니다.</p>
+					<p class="sm">단편 / 6화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/ce14cb8acf7dc9f100df005f7956fd8a.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>용마메/무마춰 크로우&유바르 이야기</h3>
+					<p>창작 GL 만화 용마메와 무마춰의 마왕 크로우 & 13대 용사 유바르의 이야기, 일러스트, 낙서 등등이 올라옵니다.</p>
+					<p class="sm">완결 / 4화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<div class="no-thumb">ALPHATYPE</div>
+					<span class="bedge19">성인</span>
+				</div>
+				<div class="post-content">
+					<h3>백합 안하면 못 나가는 방</h3>
+					<p class="sm">연재 / 2화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb">
+					<img src="./image/thumb/a33b1f17210782207300145171.webp"/>
+				</div>
+				<div class="post-content">
+					<h3>추악한 여자가 소환되었다</h3>
+					<p>창작 GL 단편 웹툰 약칭 추여소 여미새녀×소심음침녀</p>
+					<p class="sm">단편 / 4화</p>
+					<div class="post-tags">
+						<span>웹툰</span>
+						<span>로맨스</span>
+						<span>gl</span>
+						<span>백합</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="chh-b ms-b">
+		<div class="post-head">
+			<div class="mst">
+				<h2 class="name">멤버십<span></span>주2회 타로 리딩 구독</h2>
+				<p>3,900원 · 멤버십 포스트 120개</p>
+				<div class="post-desc">
+					복채 3900원/월으로 월 8회, 다양한 주제의 타로 리딩을 받아보세요🔮 이미 발행된 콘텐츠도 무제한 감상 가능합니다
+				</div>
+			</div>
+			<div class="mst-b">
+				<button type="button" class="btn btn-light">가입 혜택 더보기</button>
+				<button type="button" class="btn btn-dark">멤버십 가입</button>
+			</div>
+		</div>
+		<div class="post-gallery swiper-container">
+			<div class="swiper-wrapper">
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/7c77d48818675318131866257.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">[타로] 사람들은 나를 어떻게 생각할까?</h5>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/7c77d48818675318131866257.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>타로</span>
+							<span>운세</span>
+						</div>
+						<div class="post-info">
+							<p><i class="fas fa-comment-dollar"></i> <span>1,500P</span></p>
+							<p><i class="far fa-eye"></i> <span>48</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">타로묘묘</span> · <span class="st">1일 전</span></p>
+					</div>
+				</div>
+				<div class="post-contents swiper-slide">
+					<div class="post-thumb post-thumb-pc"><img src="./image/thumb/7c77d48818675318131866257.webp"/></div>
+					<div class="post-wrap">
+						<h5 class="title">[타로] 지금, 그 사람의 속마음</h5>
+					</div>
+					<div class="post-thumb post-thumb-m"><img src="./image/thumb/7c77d48818675318131866257.webp"/></div>
+					<div class="post-bottom">
+						<div class="post-tags">
+							<span>타로</span>
+							<span>운세</span>
+						</div>
+						<div class="post-info">
+							<p><i class="fas fa-comment-dollar"></i> <span>1,500P</span></p>
+							<p><i class="far fa-eye"></i> <span>93</span></p>
+							<p><i class="far fa-heart"></i> <span>1</span></p>
+						</div>
+					</div>
+					<div class="post-wrap end">
+						<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">타로묘묘</span> · <span class="st">5일 전</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="chh-b">
+		<div class="post-head">
+			<h2 class="tit">스토어</h2>
+			<div class="post-right">
+				<a href="channel_store.html">더보기</a>
+			</div>
+		</div>
+		<div class="post-gallery">
+			<div class="post-contents">
+				<div class="post-thumb thumb-same post-thumb-pc"><img src="./image/thumb/b3d349caec4388b205cbb23b8771f3f0.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">냥래미 양장본 만화책</h5>
+					<p class="price"><span>20,000원</span> · 옵션 2개</p>
+				</div>
+				<div class="post-thumb thumb-same post-thumb-m"><img src="./image/thumb/b3d349caec4388b205cbb23b8771f3f0.webp"/></div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>만화</span>
+						<span>고양이</span>
+						<span>반려동물</span>
+						<span>냥래미</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="pop channel-pop" id="channelInfo">
+	<div class="popbg"></div>
+	<div class="container">
+		<div class="pop-header">
+			<h2>채널 및 크리에이터 정보</h2>
+			<div class="msg-menu">
+				<button type="button" class="btn btn-close"><i class="fas fa-times"></i></button>
+			</div>
+		</div>
+		<div class="pop-body">
+			<h5>채널 정보</h5>
+			<div class="c-profile">
+				<img src="./image/profile/profile2.webp"/>
+				<div class="c-info">
+					<h4>하나씨</h4>
+					<p>일상툰, 미공개툰이 올라올지도 모를 채널입니다.</p>
+				</div>
+			</div>
+			<ul class="ch-info">
+				<li><i class="fas fa-link"></i>https://www.postype.com/@ha-na-ssi</li>
+				<li><i class="fas fa-info-circle"></i>구독자5,250명 · 포스트88개</li>
+				<li><i class="fas fa-birthday-cake"></i>개설일: 2024.01.20</li>
+			</ul>
+			<button type="button" class="btn btn-light btn-full" onclick="$('#shareModal').modal('show');">채널 공유</button>
+			<h5>크리에이터 정보</h5>
+			<div class="c-profile center">
+				<img src="./image/profile/profile2.webp"/>
+				<div class="c-info">
+					<h4>ha_na_ssi</h4>
+				</div>
+			</div>
+			<div class="btns">
+				<button type="button" class="btn btn-light" onclick="location.href='profile_home.html'">프로필 보기</button>
+				<button type="button" class="btn btn-light" id="sendBtn">메시지 쓰기</button>
+			</div>
+			<h5>링크</h5>
+			<div class="c-profile">
+				<div class="img"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.539 6.662a1.201 1.201 0 1 0-2.403 0 1.201 1.201 0 0 0 2.403 0Z" fill="url(#Instagram_svg__a)"></path><path d="M20.139 16.04c-.045.975-.208 1.505-.343 1.857-.182.467-.399.8-.75 1.15-.349.35-.682.566-1.149.746-.352.138-.884.301-1.859.348-1.054.046-1.366.056-4.04.056-2.67 0-2.985-.01-4.039-.056-.975-.047-1.504-.21-1.856-.348-.47-.18-.8-.396-1.15-.746a3.048 3.048 0 0 1-.749-1.15c-.135-.352-.3-.882-.343-1.857-.051-1.054-.06-1.371-.06-4.039 0-2.673.009-2.988.06-4.042.042-.975.208-1.504.343-1.86.18-.465.397-.797.749-1.147.35-.349.68-.566 1.15-.748.352-.138.881-.299 1.856-.345C9.013 3.812 9.33 3.8 12 3.8c2.673 0 2.985.012 4.04.059.974.046 1.506.207 1.858.345.467.182.8.399 1.148.748.352.35.569.682.75 1.148.136.355.3.884.344 1.86.049 1.053.06 1.368.06 4.041 0 2.668-.011 2.985-.06 4.04Zm1.8-8.163c-.049-1.065-.217-1.793-.466-2.427a4.875 4.875 0 0 0-1.152-1.773 4.917 4.917 0 0 0-1.77-1.153c-.637-.247-1.363-.417-2.429-.463C15.056 2.009 14.716 2 12 2c-2.715 0-3.058.01-4.124.06-1.063.047-1.788.217-2.428.464A4.93 4.93 0 0 0 3.68 3.677 4.914 4.914 0 0 0 2.525 5.45c-.247.634-.415 1.362-.467 2.427C2.012 8.943 2 9.284 2 12.001c0 2.715.012 3.055.058 4.121.052 1.064.22 1.791.467 2.428a4.905 4.905 0 0 0 1.154 1.77 4.929 4.929 0 0 0 1.768 1.155c.64.247 1.365.415 2.428.464C8.941 21.99 9.285 22 12 22c2.717 0 3.057-.012 4.123-.06 1.066-.05 1.792-.218 2.428-.465a4.917 4.917 0 0 0 1.77-1.154 4.865 4.865 0 0 0 1.153-1.77c.25-.638.417-1.365.466-2.429.05-1.066.061-1.406.061-4.12 0-2.718-.012-3.059-.06-4.125Z" fill="url(#Instagram_svg__b)"></path><path d="M11.999 15.332a3.332 3.332 0 1 1 0-6.666 3.334 3.334 0 1 1 0 6.666Zm0-8.469a5.136 5.136 0 0 0 0 10.271 5.135 5.135 0 1 0 0-10.271Z" fill="url(#Instagram_svg__c)"></path><defs><linearGradient id="Instagram_svg__a" x1="2.18" y1="21.793" x2="20.334" y2="3.64" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD521"></stop><stop offset="0.05" stop-color="#FFD521"></stop><stop offset="0.501" stop-color="#F50000"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="1" stop-color="#B900B4"></stop></linearGradient><linearGradient id="Instagram_svg__b" x1="2.18" y1="21.818" x2="20.349" y2="3.649" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD521"></stop><stop offset="0.05" stop-color="#FFD521"></stop><stop offset="0.501" stop-color="#F50000"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="1" stop-color="#B900B4"></stop></linearGradient><linearGradient id="Instagram_svg__c" x1="2.185" y1="21.819" x2="20.349" y2="3.654" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD521"></stop><stop offset="0.05" stop-color="#FFD521"></stop><stop offset="0.501" stop-color="#F50000"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="0.95" stop-color="#B900B4"></stop><stop offset="1" stop-color="#B900B4"></stop></linearGradient></defs></svg>
+				</div>
+				<div class="c-info">
+					<h4>인스타그램</h4>
+					<p>https://www.instagram.com/dotoram34/</p>
+				</div>
+			</div>
+			<div class="c-profile mt-20">
+				<div class="img"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-sizeMd joy-r76t58"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.77 12.775 3.343 20H6.19l4.92-5.544L15.448 20 21 19.97l-7.04-9.164 6.008-6.775L17.166 4l-4.539 5.091-3.883-5.083L3 4.002l6.77 8.773Zm7.867 5.561-1.437-.004L6.326 5.608h1.546l9.765 12.728Z" fill="currentColor"></path></svg></div>
+				<div class="c-info">
+					<h4>엑스</h4>
+					<p>https://twitter.com/dotoram34</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="pop message-pop" id="messageSend">
+	<div class="popbg"></div>
+	<div class="container">
+		<div class="pop-header">
+			<div class="c-profile">
+				<img src="./image/profile/profile2.webp"/>
+				<h3>라떼떼 포르투나</h3>
+			</div>
+			<div class="msg-menu">
+				<button type="button" class="btn btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+				<ul id="tbp-more-toggle-01" class="more-toggle">
+					<li><a>메시지 차단</a></li>
+					<li><a>대화방 삭제</a></li>
+				</ul>
+				<button type="button" class="btn btn-close btn-message-close"><i class="fas fa-times"></i></button>
+			</div>
+		</div>
+		<div class="pop-body"></div>
+		<div class="pop-footer">
+			<div class="msg-frm">
+				<form>
+					<input type="text" class="input-txt" placeholder="메시지를 입력하세요.">
+					<button type="button" class="btn msgBtn"><i class="fas fa-arrow-up"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">공유하기</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="sns-list">
+				<div><button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.77 12.775 3.343 20H6.19l4.92-5.544L15.448 20 21 19.97l-7.04-9.164 6.008-6.775L17.166 4l-4.539 5.091-3.883-5.083L3 4.002l6.77 8.773Zm7.867 5.561-1.437-.004L6.326 5.608h1.546l9.765 12.728Z" fill="currentColor"></path></svg>
+				</button>
+				<p>X</p>
+				</div>
+				<div>
+				<button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m16.88 13.25.572-3.594h-3.635V7.312c0-1.015.49-1.953 2.124-1.953h1.674V2.273S16.105 2 14.675 2c-2.981 0-4.942 1.758-4.942 4.883v2.773H6.385v3.594h3.348V22h4.084v-8.75h3.063Z" fill="#1877F2"></path></svg>
+				</button>
+				<p>페이스북</p>
+				</div>
+			</div>
+			<div class="sns-url">
+				<div class="copy-url">
+					<input type="text" class="copy" readonly>
+				</div>
+				<button type="button" class="btn copyBtn">URL복사</button>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<ul class="f-menu">
+			<li><a href="#">서비스 소개</a></li>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">청소년보호정책</a></li>
+			<li><a href="#">도움 센터</a></li>
+			<li><a href="#">권리침해신고센터</a></li>
+			<li><a href="#">공식 채널</a></li>
+			<li><a href="#">회사 소개・문의</a></li>
+			<li class="copy">© ALPHATYPE, Inc.</li>
+		</ul>
+		<address>
+            <span>주식회사 알파타입</span>
+            <span>사업자등록번호: 000-00-000000</span>
+            <span>통신판매업신고번호: 2024-서울00-00000</span>
+            <span>대표자명: 000</span><br/>
+            <span>주소: 서울시 강남구 테헤란로4길 5, 6층</span>
+            <span>연락처: 02-6956-0827</span>
+        </address>
+		<span class="guide">알파타입은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 알파타입은 콘텐츠, 거래정보 및 거래에 대하여 책임을 지지 않습니다.</span>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

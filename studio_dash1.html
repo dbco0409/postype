@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+<header id="st-head">
+	<h2 class="tit">대시보드</h2>
+	<button type="button" class="btn user-menu" onclick="menuToggle()">
+		<img src="./image/common/default_profile.png"/>
+	</button>
+</header>
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<aside id="st-menu">
+	<div class="fixedbg"></div>
+	<div class="inner">
+		<div class="st-logo bor">
+			<a class="ap-logo">ALP<span>HATYPE</span></a>
+		</div>
+		<div class="st-h bor">
+			<button type="button" class="btn btn-ch">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h3>알파플러스 채널</h3>
+			</button>
+			<div class="btns">
+				<button type="button" class="btn btn-primary btn-write"><i class="fas fa-plus"></i><h3>새 포스트 쓰기</h3></button>
+			</div>
+		</div>
+		<div class="st-b ">
+			<button type="button" class="btn btn-nabar btn-active">
+				<i class="fas fa-columns"></i>
+				<h3>대시보드</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-clone"></i>
+				<h3>포스트</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-book"></i>
+				<h3>시리즈</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-chart-bar"></i>
+				<h3>통계</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-user-plus n-ico"></i>
+				<h3>커뮤니티</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-shopping-basket"></i>
+				<h3>스토어</h3>
+				<span class="beta">베타</span>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fab fa-mastodon"></i>
+				<h3>멤버십</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="far fa-user n-ico"></i>
+				<h3>구독자</h3>
+			</button>
+			<button type="button" class="btn btn-nabar">
+				<i class="fas fa-cog n-ico"></i>
+				<h3>설정</h3>
+			</button>
+		</div>
+	</div>
+</aside>
+<nav id="m_menu">
+	<button type="button" class="btn btn-nabar btn-active">
+		<i class="fas fa-columns"></i>
+		<h3>대시보드</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="far fa-clone"></i>
+		<h3>포스트</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-chart-bar"></i>
+		<h3>통계</h3>
+	</button>
+	<button type="button" class="btn btn-nabar">
+		<i class="fas fa-shopping-basket"></i>
+		<h3>스토어</h3>
+	</button>
+	<button type="button" class="btn btn-nabar btn-menu">
+		<i class="fas fa-bars"></i>
+		<h3>모바일메뉴</h3>
+	</button>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dash.js"></script>
+
+<section id="st-main">
+	<article class="stm-body post-stat" id="stat-post">
+		<div class="p-tit">
+			<h3>채널 통계</h3>
+		</div>
+		<div class="stat-graph">
+			<div class="box">
+				<div class="stat-total">
+					<span class="stit">현재 구독자</span>
+					<span class="num"><em>20</em>명</span>
+				</div>
+				<canvas id="chart" width="290" height="150"></canvas>
+			</div>
+		</div>
+		<div class="stat-list">
+			<p class="tit">최근 7일</p>
+			<ul>
+				<li>
+					<span class="stit">조회수</span>
+					<span class="num">0</span>
+				</li>
+				<li>
+					<span class="stit">좋아요</span>
+					<span class="num">0</span>
+				</li>
+				<li>
+					<span class="stit">댓글</span>
+					<span class="num">0</span>
+				</li>
+			</ul>
+		</div>
+		<div class="btns">
+			<button type="button" class="btn btn-move">채널 통계로 이동<i class="fas fa-chevron-right"></i></button>
+		</div>
+	</article>
+	<article class="stm-body post-latestlist" id="recent-post">
+		<div class="p-tit">
+			<h3>최근 포스트 현황</h3>
+		</div>
+		<div class="no-box">
+			<i class="fas fa-pencil-ruler"></i>
+			<h4>최근에 발행한 포스트가 없어요</h4>
+			<p>포스트를 발행하고 현황을 빠르게 확인해보세요.</p>
+			<button type="button" class="btn btn-light btn-write">새 포스트 쓰기</button>
+		</div>
+	</article>
+	<article class="stm-body post-latestlist" id="recent-post">
+		<div class="p-tit">
+			<h3>인기 포스트 현황</h3>
+			<p>최근 3일</p>
+		</div>
+		<div class="no-box">
+			<i class="fas fa-heartbeat"></i>
+			<h4>아직 인기 포스트가 없어요</h4>
+			<p>포스트 발행 후 인기 포스트를 확인해보세요.</p>
+			<button type="button" class="btn btn-light btn-write">새 포스트 쓰기</button>
+		</div>
+	</article>
+	<article class="stm-body post-latestlist" id="recent-post">
+		<div class="p-tit">
+			<h3>멤버십</h3>
+		</div>
+		<div class="no-box">
+			<i class="fab fa-mastodon"></i>
+			<h4>아직 개설한 멤버십이 없어요</h4>
+			<p>멤버십은 멤버십 플랜에 가입해 매월 정기후원하는 멤버에게만 한정 포스트를 공개하는 기능입니다. 멤버십 플랜을 만들고 운영 현황을 빠르게 확인해보세요.</p>
+			<button type="button" class="btn btn-light btn-write">새 멤버십 플랜 만들기</button>
+		</div>
+	</article>
+</section>
+
+
+</div>
+</body>
+</html>

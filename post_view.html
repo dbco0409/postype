@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+<script src="js/postview.js"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="header">
+	<nav class="navbar">
+		<div class="inner">
+			<div class="nav-menu">
+				<a class="ap-logo">ALP</a>
+				<a class="ch-name">지구의 보물상자</a>
+			</div>
+			<div class="nav-info">
+				<div class="search">
+					<form name="search-form" class="searchfrm">
+						<div class="group">
+							<i class="fas fa-search"></i>
+							<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+						</div>
+					</form>
+				</div>
+				<a class="btn-search-m"><i class="fas fa-search"></i></a>
+				<a href="login.html" class="btn-login">로그인</a>
+				<a href="register.html" class="btn btn-register btn-outline-primary">회원가입</a>
+			</div>
+		</div>
+	</nav>
+	<section class="chv-head" id="poatv-head">
+		<div class="cl">
+			<button type="button" class="btn"><i class="fas fa-arrow-left"></i></button>
+		</div>
+		<div class="cr">
+			<button type="button" class="btn btnShare" onclick="$('#shareModal').modal('show');"><i class="fas fa-external-link-alt"></i></button>
+			<button type="button" class="btn btn-more btn-toggle" data-target="pv-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+			<ul id="pv-more-toggle-01" class="more-toggle">
+				<li class="resize"><button type="button" class="btn btnminus"><i class="fas fa-minus"></i></button><span>가</span><button type="button" class="btn btnplus"><i class="fas fa-plus"></i></button></li>
+				<li class="darkmode">
+					<div class="form-check form-switch">
+					  <label class="form-check-label" for="darkmod">다크모드</label>
+					  <input class="form-check-input" type="checkbox" id="darkmod">
+					</div>
+				</li>
+				<li><a>컬렉션에 추가하기</a></li>
+				<li><a>신고하기</a></li>
+			</ul>
+		</div>
+	</section>
+</header>
+
+<nav class="user-menu-toggle">
+	<div class="m-bg" onclick="hideUserMenu()"></div>
+	<div class="nabar-scroll">
+		<div class="group">
+			<button type="button" class="btn btn-nabar btn-dropdown" onclick="navToggle()">
+				<img src="./image/common/default_profile.png" class="n-img"/>
+				<h4 class="menu-txt">홍길동</h4>
+				<i class="fas fa-chevron-down ico-dropdown ico-right"></i>
+			</button>
+		</div>
+		<div class="toggle-down">
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-star n-ico"></i>
+					<h4 class="menu-txt">길동이네</h4>
+					<div class="ico-right">
+						<a class="is"><i class="fas fa-cog"></i></a>
+						<a><i class="fas fa-plus"></i></a>
+					</div>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-home n-ico"></i>
+					<h4 class="menu-txt">알파타입 홈</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-bell n-ico"></i>
+					<h4 class="menu-txt">알림</h4>
+					<em class="bedge bell-bedge ico-right">2</em>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-user n-ico"></i>
+					<h4 class="menu-txt">구독</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-inbox n-ico"></i>
+					<h4 class="menu-txt">보관함</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-envelope n-ico"></i>
+					<h4 class="menu-txt">메시지</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-comment-dollar n-ico"></i>
+					<h4 class="menu-txt">수익</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-product-hunt n-ico"></i>
+					<h4 class="menu-txt">포인트</h4>
+					<span class="btn-point ico-right">충전</span>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fab fa-mastodon n-ico"></i>
+					<h4 class="menu-txt">가입한 멤버십</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-shopping-basket n-ico"></i>
+					<h4 class="menu-txt">스토어 주문</h4>
+				</button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-cog n-ico"></i>
+					<h4 class="menu-txt">설정</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-plus-square n-ico"></i>
+					<h4 class="menu-txt">새 채널 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-book n-ico"></i>
+					<h4 class="menu-txt">크리에이터 가이드</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="far fa-question-circle n-ico"></i>
+					<h4 class="menu-txt">도움 센터</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-sign-out-alt n-ico"></i>
+					<h4 class="menu-txt">로그아웃</h4>
+				</button>
+			</div>
+		</div>
+		<div class="toggle-up">
+			<h6>내 프로필</h6>
+			<div class="group">
+				<button type="button" class="btn btn-nabar">
+					<img src="./image/common/default_profile.png" class="n-img"/>
+					<h4 class="menu-txt">홍길동</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-plus n-ico"></i>
+					<h4 class="menu-txt">새 프로필 만들기</h4>
+				</button>
+				<button type="button" class="btn btn-nabar">
+					<i class="fas fa-user-edit n-ico"></i>
+					<h4 class="menu-txt">프로필 수정</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav class="m-search-box">
+	<div class="search">
+		<form name="search-form" class="searchfrm">
+			<div class="group">
+				<i class="fas fa-search"></i>
+				<input type="search" class="input-search" placeholder="검색어를 입력해주세요."/>
+			</div>
+		</form>
+		<a class="close-box">닫기</a>
+	</div>
+</nav>
+
+<section class="chv-body" id="poatv-body">
+	<div class="chv-h">
+		<div class="c-tit">
+			<h3 class="stit">지구 인스타툰 멘탈편</h3>
+			<h2 class="tit">구김없는 친구의 비밀</h2>
+			<p class="desc">단단한 나를 만드는 안정기반 프로젝트.</p>
+		</div>
+		<div class="c-profile">
+			<img src="./image/profile/profile2.webp"/>
+			<div class="c-info">
+				<h4>ggoo</h4>
+				<p>2024.09.25 · 조회 20</p>
+			</div>
+		</div>
+	</div>
+		<div class="chv-b">
+		<div class="content">
+			<p><br/></p>
+			인스타툰 시리즈를 보기쉽게 하려고 포스타입에 따로 업로드해요!<br/><br/>
+			인스타보다 고화질임! :-)<br/><br/>
+			미리보기는 지구의 인스타툰 -> <br/><br/>
+			<a href="https://www.instagram.com/p/C1zKT-7rxwR/?img_index=1" target="_blank"> https://www.instagram.com/p/C1zKT-7rxwR/?img_index=1</a>
+			<div class="thumb">
+				<img src="./image/thumb/a3dec68748671404360185104.webp"/>
+			</div>
+			<p><br/></p>
+			밑결제창은 후원창이에요! 결제하시면 <br/><br/>
+			지구의 비밀메모가 적혀있습니다. :-)
+		</div>
+		<div class="payy">
+			<span class="line"></span>
+			<span class="txt">여기서부터 유료 분량이에요.</span>
+		</div>
+		<div class="orderBox">
+			<div class="orderinfo">
+				<h5 class="point">100P</h5>
+				<p>텍스트 <strong>176자</strong> <span class="sm">(공백제외)</span></p>
+			</div>
+			<div class="btns">
+				<button type="button" class="btn btn-light">여러 회차 구매</button>
+				<button type="button" class="btn btn-dark">구매하기</button>
+			</div>
+		</div>
+		<div class="orderBox">
+			<div class="ordercontent">
+				<p>멤버십에 가입하면 유료 분량과 더 많은 포스트를 감상할 수 있어요.</p>
+				<button type="button" class="btn">
+					<div>거친 파도 넘기<span>4,000원/월 · 멤버십 포스트 903</span></div>
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="post-tags">
+			<span>부일페</span>
+			<span>할인</span>
+			<span>일러스트</span>
+			<span>굿즈</span>
+			<span>부산일러스트레이션페어</span>
+		</div>
+
+	<div class="chv-p">
+		<div class="link prev-link">
+			<i class="fas fa-chevron-left"></i>
+			이전글이 없어요.
+		</div>
+		<div class="link next-link">
+			다음글이 없어요.
+			<i class="fas fa-chevron-right"></i>
+		</div>
+	</div>
+	<div class="wbook">
+		<div class="profile-info">
+			<div class="profile-img">
+				<img src="./image/profile/profile2.webp"/>
+			</div>
+			<div class="name">
+				<h4><a href="channel_home.html">패스트캠퍼스</a></h4>
+				<p>구독자 10명</p>
+			</div>
+		</div>
+		<button type="button" class="btn btn-dark">구독</button>
+	</div>
+</section>
+<section class="chh-body chv-body body" id="recommend-body">
+	<div class="chh-b chh-nb">
+		<div class="post-head">
+			<h2 class="tit">추천 포스트</h2>
+		</div>
+		<div class="post-gallery no-slider">
+			<div class="post-contents">
+				<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">[부일페V.5] 3차 얼리버드 𝙏𝙄𝘾𝙆𝙀𝙏 𝙊𝙋𝙀𝙉🎉</h5>
+					<p class="desc">마지막 10% 할인 절대 놓치지 마세요!</p>
+				</div>
+				<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>부일페</span>
+						<span>할인</span>
+						<span>일러스트</span>
+						<span>굿즈</span>
+						<span>부산일러스트레이션페어</span>
+					</div>
+					<div class="post-info">
+						<p><i class="far fa-eye"></i> <span>2.7천</span></p>
+						<p><i class="far fa-heart"></i> <span>20</span></p>
+						<p><i class="far fa-comment-dots"></i> <span>1</span></p>
+					</div>
+				</div>
+				<div class="post-wrap end">
+					<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">오씨메이커스</span> · <span class="st">2024.09.03</span></p>
+					<div class="post-action">
+						<a><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="tbp-more-toggle-01" class="more-toggle">
+							<li><a>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb2.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">플라잉 타이거: 만화로 피어 오른 공중전의 낭만</h5>
+					<p class="desc">SF 소설가 곽재식의 인생 만화 3</p>
+				</div>
+				<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>에세이</span>
+						<span>만화</span>
+						<span>곽재식</span>
+						<span>인생만화</span>
+					</div>
+					<div class="post-info">
+						<p><i class="far fa-eye"></i> <span>3.3천</span></p>
+						<p><i class="far fa-heart"></i> <span>13</span></p>
+					</div>
+				</div>
+				<div class="post-wrap end">
+					<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">Jaesik Kwak</span> · <span class="st">2일 전</span></p>
+					<div class="post-action">
+						<a><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-02"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="tbp-more-toggle-02" class="more-toggle">
+							<li><a>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb post-thumb-pc"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">[부일페V.5] 3차 얼리버드 𝙏𝙄𝘾𝙆𝙀𝙏 𝙊𝙋𝙀𝙉🎉</h5>
+					<p class="desc">마지막 10% 할인 절대 놓치지 마세요!</p>
+				</div>
+				<div class="post-thumb post-thumb-m"><img src="./image/thumb/64f95d2202c0482d762931b550126e3b.webp"/></div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>부일페</span>
+						<span>할인</span>
+						<span>일러스트</span>
+						<span>굿즈</span>
+						<span>부산일러스트레이션페어</span>
+					</div>
+					<div class="post-info">
+						<p><i class="far fa-eye"></i> <span>2.7천</span></p>
+						<p><i class="far fa-heart"></i> <span>20</span></p>
+						<p><i class="far fa-comment-dots"></i> <span>1</span></p>
+					</div>
+				</div>
+				<div class="post-wrap end">
+					<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">오씨메이커스</span> · <span class="st">2024.09.03</span></p>
+					<div class="post-action">
+						<a><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-01"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="tbp-more-toggle-01" class="more-toggle">
+							<li><a>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="post-contents">
+				<div class="post-thumb post-thumb-pc"><img src="./image/thumb/thumb22.webp"/></div>
+				<div class="post-wrap">
+					<h5 class="title">헤비메탈6: 할리우드 SF 액션 블록버스터들에 대한 1990년대 한국 만화의 응답</h5>
+					<p class="desc">SF 소설가 곽재식의 인생 만화 2</p>
+				</div>
+				<div class="post-thumb post-thumb-m"><img src="./image/thumb/thumb2.webp"/></div>
+				<div class="post-bottom">
+					<div class="post-tags">
+						<span>에세이</span>
+						<span>만화</span>
+						<span>곽재식</span>
+						<span>인생만화</span>
+					</div>
+					<div class="post-info">
+						<p><i class="far fa-eye"></i> <span>3.6천</span></p>
+						<p><i class="far fa-heart"></i> <span>17</span></p>
+					</div>
+				</div>
+				<div class="post-wrap end">
+					<p class="product"><img src="./image/thumb/profile.webp"/><span class="name">Jaesik Kwak</span> · <span class="st">2일 전</span></p>
+					<div class="post-action">
+						<a><i class="far fa-bookmark"></i></a>
+						<button type="button" class="btn btn-more btn-toggle" data-target="tbp-more-toggle-03"><i class="fas fa-ellipsis-h"></i></button>
+						<ul id="tbp-more-toggle-03" class="more-toggle">
+							<li><a>공유하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-btn">
+			<button type="button" class="btn-more"><i class="fas fa-redo-alt"></i>추천 포스트 더보기</button>
+		</div>
+	</div>
+</section>
+<section class="cmt-body body" id="comment-body">
+	<div class="cmt-list">
+		<div class="total-cmt">
+			<h4>0개의 댓글</h4>
+		</div>
+		<div class="cfrm">
+			<form>
+				<div class="cmw-frm btn-write">
+					<img src="./image/common/default_profile.png">
+					<textarea placeholder="SNS 계정으로 로그인하고 댓글을 남겨주세요." class="input-control"  onclick="location.href='login.html'" readonly></textarea>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="bnn">
+		<a href=""><img src="./image/thumb/267daa1c21bfb87fd462d3d6c6e6395f.webp"></a>
+	</div>
+</section>	
+
+<section class="fixedNav" id="fixed-nav">
+	<div class="inner">
+		<div class="left">
+			<button type="button" class="btn btn-heart" onclick="location.href='login.html'"><i class="far fa-heart"></i> 12</button>
+			<button type="button" class="btn btn-cmt" onclick="fnMove('#comment-body')"><i class="far fa-comment"></i> 0</button>
+			<button type="button" class="btn btn-bookmark" onclick="location.href='login.html'"><i class="far fa-bookmark"></i></button>
+		</div>
+		<div class="right">
+			<button type="button" class="btn btn-prev"><i class="fas fa-chevron-left"></i> 이전글</button>
+			<button type="button" class="btn btn-list"><i class="fas fa-list-ul"></i></button>
+			<button type="button" class="btn btn-next">다음글<i class="fas fa-chevron-right"></i></button>
+		</div>
+	</div>
+</section>
+
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">공유하기</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="sns-list">
+				<div><button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.77 12.775 3.343 20H6.19l4.92-5.544L15.448 20 21 19.97l-7.04-9.164 6.008-6.775L17.166 4l-4.539 5.091-3.883-5.083L3 4.002l6.77 8.773Zm7.867 5.561-1.437-.004L6.326 5.608h1.546l9.765 12.728Z" fill="currentColor"></path></svg>
+				</button>
+				<p>X</p>
+				</div>
+				<div>
+				<button type="button" class="btn btn-sns">
+					<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m16.88 13.25.572-3.594h-3.635V7.312c0-1.015.49-1.953 2.124-1.953h1.674V2.273S16.105 2 14.675 2c-2.981 0-4.942 1.758-4.942 4.883v2.773H6.385v3.594h3.348V22h4.084v-8.75h3.063Z" fill="#1877F2"></path></svg>
+				</button>
+				<p>페이스북</p>
+				</div>
+			</div>
+			<div class="sns-url">
+				<div class="copy-url">
+					<input type="text" class="copy" readonly>
+				</div>
+				<button type="button" class="btn copyBtn">URL복사</button>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<ul class="f-menu">
+			<li><a href="#">서비스 소개</a></li>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보처리방침</a></li>
+			<li><a href="#">청소년보호정책</a></li>
+			<li><a href="#">도움 센터</a></li>
+			<li><a href="#">권리침해신고센터</a></li>
+			<li><a href="#">공식 채널</a></li>
+			<li><a href="#">회사 소개・문의</a></li>
+			<li class="copy">© ALPHATYPE, Inc.</li>
+		</ul>
+		<address>
+            <span>주식회사 알파타입</span>
+            <span>사업자등록번호: 000-00-000000</span>
+            <span>통신판매업신고번호: 2024-서울00-00000</span>
+            <span>대표자명: 000</span><br/>
+            <span>주소: 서울시 강남구 테헤란로4길 5, 6층</span>
+            <span>연락처: 02-6956-0827</span>
+        </address>
+		<span class="guide">알파타입은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 알파타입은 콘텐츠, 거래정보 및 거래에 대하여 책임을 지지 않습니다.</span>
+	</div>
+</footer>
+
+</div>
+</body>
+</html>

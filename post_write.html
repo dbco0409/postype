@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>알파타입</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/write.css" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
+<script src="js/write.js"></script>
+</head>
+<body>
+<div id="wrap">
+<div id="loadingSpinner" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+	<p>맞춤법 교정중...</p>
+</div>
+<form>
+<header class="w_head">
+	<div class="t-f">
+		<div class="w-l">
+			<button type="button" class="btn btn-prev"><i class="fas fa-arrow-left"></i></button>
+			<h2></h2>
+		</div>
+		<div class="w-r">
+			<div class="txtsize">0자</div>
+			<button type="button" class="btn btn-more btn-toggle" data-target="wh-more-toggle"><i class="fas fa-ellipsis-h"></i></button>
+			<ul id="wh-more-toggle" class="more-toggle no-line">
+				<li class="mode lineb darkmode">
+					<div class="form-check form-switch">
+					  <label class="form-check-label" for="darkmod">다크모드</label>
+					  <input class="form-check-input" type="checkbox" id="darkmod">
+					</div>
+				</li>
+				<li><a>편집이력</a></li>
+				<li><a>미리보기</a></li>
+				<li class="lineb"><a class="red">휴지통으로 이동</a></li>
+				<li class="mode lineb">
+					<div class="form-check form-switch">
+					  <label class="form-check-label" for="autosave">자동저장</label>
+					  <input class="form-check-input" type="checkbox" id="autosave">
+					</div>
+				</li>
+				<li><a>에디터 도움말</a></li>
+				<li><a>문의하기</a></li>
+			</ul>
+			<button type="button" class="btn btn-lg btn-light btn-save">저장</button>
+			<button type="button" class="btn btn-lg btn-dark btn-submit">발행</button>
+		</div>
+	</div>
+	<nav class="navbar-edit">
+		<div class="inner">
+			<div class="group">
+				<div class="selectGroup">
+					<button type="button" class="btn btn-selected btn-plus"><i class="fas fa-plus"></i></button>
+				</div>
+				<button type="button" class="btn btn-back" id="btn-back" disabled><i class="fas fa-undo-alt"></i></button>
+				<button type="button" class="btn btn-forward" id="btn-forward" disabled><i class="fas fa-redo-alt"></i></button>
+			</div>
+			<div class="group selectGroup">
+				<button type="button" class="btn btn-selected input-control" id="fontstyleButton"><span class="viewp"><span class="tit">본문</span><i class="fas fa-sort-down"></i></span><span class="viewm"><i class="fas fa-heading"></i></span></button>
+			</div>
+			<div class="group selectGroup">
+				<button type="button" class="btn btn-selected input-control" id="fontfamilyButton"><span class="viewp"><span class="tit">NotoSans</span><i class="fas fa-sort-down"></i></span><span class="viewm"><i class="fas fa-font"></i></span></button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn" id="btn-bold"><i class="fas fa-bold"></i></button>
+				<button type="button" class="btn" id="btn-italic"><i class="fas fa-italic"></i></button>
+				<button type="button" class="btn" id="btn-underline"><i class="fas fa-underline"></i></button>
+				<button type="button" class="btn" id="btn-strike"><i class="fas fa-strikethrough"></i></button>
+				<div class="selectGroup">
+					<button type="button" class="btn btn-selected btn-color"><i class="fas fa-font"></i></button>
+				</div>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-link" onclick="showLinkModal()"><i class="fas fa-link"></i></button>
+				<button type="button" class="btn btn-img" onclick="showimgModal()"><i class="fas fa-image"></i></button>
+				<div class="selectGroup">
+					<button type="button" class="btn btn-selected btn-quote"><i class="fas fa-quote-left"></i></button>
+				</div>
+				<div class="selectGroup">
+					<button type="button" class="btn btn-selected btn-line"><i class="fas fa-grip-lines"></i></button>
+				</div>
+			</div>
+			<div class="group">
+				<div class="selectGroup">
+					<button type="button" class="btn btn-selected btn-align" id="alignButton"><i class="fas fa-align-left"></i></button>
+				</div>
+				<button type="button" class="btn btn-li" id="btn-unordered-list"><i class="fas fa-list-ul"></i></button>
+				<button type="button" class="btn btn-ol" id="btn-ordered-list"><i class="fas fa-list-ol"></i></button>
+				<button type="button" class="btn btn-outdent"><i class="fas fa-outdent"></i></button>
+				<button type="button" class="btn btn-indent"><i class="fas fa-indent"></i></button>
+			</div>
+			<div class="group">
+				<button type="button" class="btn btn-li" onclick="showStyleModal()"><i class="fas fa-archive"></i></button>
+				<button type="button" class="btn btn-ol" onclick="checkSpelling()"><i class="fas fa-spell-check"></i></button>
+			</div>
+		</div>
+	</nav>
+</header>
+<nav class="subnavbar">
+	<div class="opt" id="options01">
+		<button type="button" class="opt-col" id="insertPayBox"><i class="fas fa-comment-dollar"></i>결제상자 삽입</button>
+		<button type="button" class="opt-col" onclick="showimgModal()"><i class="far fa-image"></i>이미지 업로드</button>
+		<button type="button" class="opt-col" onclick="showFileUploadModal()"><i class="fas fa-folder-plus"></i>파일 업로드</button>
+		<button type="button" class="opt-col" onclick="showLinkModal()"><i class="fas fa-link"></i>외부링크 삽입</button>
+		<!--<button type="button" class="opt-col"><i class="fas fa-code"></i>코드 삽입</button>-->
+	</div>
+	<div class="opt" id="options02">
+		<button type="button" class="opt-col" onclick="btnStyle('h1','제목1')"><h1>제목1</h1></button>
+		<button type="button" class="opt-col" onclick="btnStyle('h2','제목2')"><h2>제목2</h2></button>
+		<button type="button" class="opt-col" onclick="btnStyle('h3','제목3')"><h3>제목3</h3></button>
+		<button type="button" class="opt-col" onclick="btnStyle('p','본문')"><p>본문</p></button>
+	</div>
+	<div class="opt" id="options03">
+		<button type="button" class="opt-col font_no" onclick="setfontfamilyChange('NotoSans');">NotoSans</button>
+		<button type="button" class="opt-col font_ko" onclick="setfontfamilyChange('Kopub바탕');">Kopub바탕</button>
+		<button type="button" class="opt-col font_na" onclick="setfontfamilyChange('나눔명조');">나눔명조</button>
+		<button type="button" class="opt-col font_do" onclick="setfontfamilyChange('돋움');">돋움</button>
+		<button type="button" class="opt-col font-gu" onclick="setfontfamilyChange('굴림');">굴림</button>
+	</div>
+	<div class="opt" id="options04">
+		<button type="button" class="opt-one black viewM" onclick="setFontColor('#000000')">#000000</button>
+		<button type="button" class="opt-one gray1" onclick="setFontColor('#303030')">#303030</button>
+		<button type="button" class="opt-one gray2 viewM" onclick="setFontColor('#505050')">#505050</button>
+		<button type="button" class="opt-one gray3" onclick="setFontColor('#707070')">#707070</button>
+		<button type="button" class="opt-one gray4" onclick="setFontColor('#909090')">#909090</button>
+		<button type="button" class="opt-one gray5" onclick="setFontColor('#c0c0c0')">#c0c0c0</button>
+		<button type="button" class="opt-one gray6" onclick="setFontColor('#f0f0f0')">#f0f0f0</button>
+		<button type="button" class="opt-one white" onclick="setFontColor('#ffffff')">#ffffff</button>
+		<button type="button" class="opt-one red viewM" onclick="setFontColor('#d50000')">#d50000</button>
+		<button type="button" class="opt-one orange1" onclick="setFontColor('#ff5722')">#ff5722</button>
+		<button type="button" class="opt-one orange2" onclick="setFontColor('#ff9800')">#ff9800</button>
+		<button type="button" class="opt-one orange3" onclick="setFontColor('#ffc107')">#ffc107</button>
+		<button type="button" class="opt-one yellow" onclick="setFontColor('#ffeb3b')">#ffeb3b</button>
+		<button type="button" class="opt-one green1" onclick="setFontColor('#cddc39')">#cddc39</button>
+		<button type="button" class="opt-one green2 viewM" onclick="setFontColor('#8bc34a')">#8bc34a</button>
+		<button type="button" class="opt-one green3" onclick="setFontColor('#4caf50')">#4caf50</button>
+		<button type="button" class="opt-one pink viewM" onclick="setFontColor('#e91e63')">#e91e63</button>
+		<button type="button" class="opt-one purple1 viewM" onclick="setFontColor('#9c27b0')">#9c27b0</button>
+		<button type="button" class="opt-one purple2" onclick="setFontColor('#673ab7')">#673ab7</button>
+		<button type="button" class="opt-one purple3" onclick="setFontColor('#3f51b5')">#3f51b5</button>
+		<button type="button" class="opt-one blue1 viewM" onclick="setFontColor('#2962ff')">#2962ff</button>
+		<button type="button" class="opt-one blue2" onclick="setFontColor('#03a9f4')">#03a9f4</button>
+		<button type="button" class="opt-one blue3" onclick="setFontColor('#00bcd4')">#00bcd4</button>
+		<button type="button" class="opt-one blue4" onclick="setFontColor('#009688')">#009688</button>
+		<button type="button" class="opt-one brown viewM" onclick="setFontColor('#795548')">#795548</button>
+		<button type="button" class="opt-one gray7" onclick="setFontColor('#607d8b')">#607d8b</button>
+	</div>
+	<div class="opt" id="options05">
+		<button type="button" class="opt-col" onclick="setBlockquote('quote-left')"><blockquote class="quo-left"><i class="fas fa-quote-left"></i><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col" onclick="setBlockquote('quote-left-s')"><blockquote class="quo-left-s"><i class="fas fa-quote-left"></i><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col" onclick="setBlockquote('grayline')"><blockquote class="grayline"><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col" onclick="setBlockquote('graybox')"><blockquote class="graybox"><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col" onclick="setBlockquote('grayball')"><blockquote class="ball grayball"><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col" onclick="setBlockquote('blueball')"><blockquote class="ball blueball"><span>인용</span></blockquote></button>
+		<button type="button" class="opt-col opt-cancel" onclick="setBlockquote('removeblock')"><i class="fas fa-ban"></i></button>
+	</div>
+	<div class="opt" id="options06">
+		<button type="button" class="opt-col" onclick="setHr('hr-def-short')"><hr class="hr hr-def-short"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-bold-short')"><hr class="hr hr-bold-short"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-dot-short')"><hr class="hr hr-dot-short"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-zigzag-short')"><hr class="hr hr-zigzag-short"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-striped')"><hr class="hr hr-striped"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-dot')"><hr class="hr hr-dot"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-zigzag')"><hr class="hr hr-zigzag"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-def')"><hr class="hr hr-def"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-bold')"><hr class="hr hr-bold"/></button>
+		<button type="button" class="opt-col" onclick="setHr('hr-dash')"><hr class="hr hr-dash"/></button>
+	</div>
+	<div class="opt" id="options07">
+		<button type="button" class="opt-col" onclick="setAlign('left')"><i class="fas fa-align-left"></i></button>
+		<button type="button" class="opt-col" onclick="setAlign('right')"><i class="fas fa-align-right"></i></button>
+		<button type="button" class="opt-col" onclick="setAlign('center')"><i class="fas fa-align-center"></i></button>
+		<button type="button" class="opt-col" onclick="setAlign('justify')"><i class="fas fa-align-justify"></i></button>
+	</div>
+</nav>
+
+<section id="formTextarea">
+	<div class="group bor">
+		<textarea class="input-control title-form" rows="1" placeholder="제목을 입력하세요."></textarea>
+		<textarea class="input-control subtitle-form" rows="1" placeholder="부제목을 입력하세요."></textarea>
+	</div>
+	<div id="editor" class="text-form" dir="ltr" contenteditable="true" placeholder="내용을 입력하세요." aria-disabled="false" spellcheck="true" oninput="updateTextSize()">
+		<p>&nbsp;</p>
+		<div class="paybox payment-line no-spell" contenteditable="false" draggable="true">
+			<div class="paymsg02">결제 상자를 옮겨 유료 분량을 만드세요</div>
+			<div class="paymsg01">여기서부터 유료분량이에요.</div>
+		</div>
+		<p>&nbsp;</p>
+		<div class="quick-btn">
+			<button type="button" class="btn moreBtn rBtn" id="toggleQuickMenu"><i class="fas fa-plus"></i></button>
+			<div class="opt" id="quickMenu">
+				<button type="button" class="rBtn" onclick="InsertpayBox();"><i class="fas fa-comment-dollar"></i></button>
+				<button type="button" class="rBtn" onclick="showimgModal();"><i class="far fa-image"></i></button>
+				<button type="button" class="rBtn" onclick="showFileUploadModal();"><i class="fas fa-folder-plus"></i></button>
+				<button type="button" class="rBtn" onclick="showLinkModal();"><i class="fas fa-link"></i></button>
+			</div>
+		</div>
+	</div>
+
+</section>
+</form>
+
+<div class="modal fade" id="LinkModal" tabindex="-1" role="dialog" aria-labelledby="LinkModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">링크</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="form-group">
+				<input type="text" id="url" class="form-control" placeholder="URL을 입력하세요."/>
+			</div>
+			<div class="link-check">
+				<label for="removeLink" class="custom-checkbox strong">
+					<input type="checkbox" id="removeLink" value="1"/>
+					<span class="checkmark"></span>
+					링크 제거
+				</label>
+			</div>
+      </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+		<button type="button" class="btn btn-primary addBtn" id="insertLink">삽입</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="imgUploadModal" tabindex="-1" role="dialog" aria-labelledby="imgUploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">이미지 보관함</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-none">
+			<h4>업로드된 이미지가 없어요.</h4>
+			<p>파일 당 최대 50MB, 최대 5개의 GIF 이미지를<br/>업로드 할 수 있어요.</p>
+			<button type="button" class="btn uploadBtn" id="imgUploadBtn"><i class="fas fa-plus"></i>이미지 업로드</button>
+      </div>
+	  <div class="modal-body modal-imgs">
+		<div class="b-header">
+			<div class="m-left">
+				<div class="link-check">
+					<label for="AllCheck" class="custom-checkbox strong">
+						<input type="checkbox" id="AllCheck" value="1"/>
+						<span class="checkmark"></span>
+						전체 선택
+					</label>
+				</div>
+				<button type="button" class="btn btn-delete" id="deleteBtn">삭제</button>
+			</div>
+			<div class="m-right">
+				<p>이미지 하나 당 최대 50MB, 최대 5개의 GIF 파일</p>
+				<button type="button" class="btn uploadBtn" id="UploadBtn"><i class="fas fa-plus"></i>이미지 업로드</button>
+			</div>
+		</div>
+		<div class="b-body">
+			<div class="scroll"></div>
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+		<button type="button" class="btn btn-primary addBtn" id="imgSubmitBtn">삽입</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="fileUploadModal" tabindex="-1" role="dialog" aria-labelledby="fileUploadModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">파일</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="form-group">
+				<input type="file" id="uploadFile" class="form-control"/>
+			</div>
+			<p>최대 1GB의 파일을 올릴 수 있어요. (동영상 파일은 100MB로 제한돼요.)</p>
+      </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+		<button type="button" class="btn btn-primary addBtn" id="insertFile">삽입</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="styleModal" tabindex="-1" role="dialog" aria-labelledby="styleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">기본 스타일</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<div class="set">
+				<h4>글꼴 · 글 정렬</h4>
+				<div class="g-row">
+					<div class="group selectGroup">
+						<button type="button" class="btn btn-selected input-control" id="ffsBtn"><span>NotoSans</span><i class="fas fa-sort-down"></i></button>
+						<div class="opt noopt" id="options03-1">
+							<button type="button" class="opt-col font_no" onclick="setfontfamilyChange('NotoSans');">NotoSans</button>
+							<button type="button" class="opt-col font_ko" onclick="setfontfamilyChange('Kopub바탕');">Kopub바탕</button>
+							<button type="button" class="opt-col font_na" onclick="setfontfamilyChange('나눔명조');">나눔명조</button>
+							<button type="button" class="opt-col font_do" onclick="setfontfamilyChange('돋움');">돋움</button>
+							<button type="button" class="opt-col font-gu" onclick="setfontfamilyChange('굴림');">굴림</button>
+						</div>
+					</div>
+					<div class="align-btn">
+						<button type="button" class="opt-col active" onclick="setAlign('left')"><i class="fas fa-align-left"></i></button>
+						<button type="button" class="opt-col" onclick="setAlign('right')"><i class="fas fa-align-right"></i></button>
+						<button type="button" class="opt-col" onclick="setAlign('center')"><i class="fas fa-align-center"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="set">
+				<h4>들여쓰기</h4>
+				<div class="g-row">
+					<div class="group selectGroup s100">
+						<button type="button" class="btn btn-selected input-control" id="inButton"><span>사용안함</span><i class="fas fa-sort-down"></i></button>
+						<div class="opt" id="options03-2">
+							<button type="button" class="opt-col" onclick="inBtn(1)">사용함</button>
+							<button type="button" class="opt-col" onclick="inBtn(0)">사용안함</button>
+						</div>
+					</div>
+				</div>
+				<p>문단의 첫 글자를 자동으로 들여쓰기해요.</p>
+			</div>
+			<div class="set">
+				<h4>문단 사이 여백 주기</h4>
+				<div class="g-row">
+					<div class="group selectGroup s100">
+						<button type="button" class="btn btn-selected input-control" id="blankButton"><span>사용안함</span><i class="fas fa-sort-down"></i></button>
+						<div class="opt" id="options03-3">
+							<button type="button" class="opt-col" onclick="blankBtn(1)">사용함</button>
+							<button type="button" class="opt-col" onclick="blankBtn(2)">사용안함</button>
+						</div>
+					</div>
+				</div>
+				<p>엔터 키를 입력해 새로운 문단을 시작하면 문단과 문단 사이에 줄글 하나 정도의 여백을 줍니다. 이 항목을 사용함으로 설정하면 웹 접근성 지침에 따라 장애인의 콘텐츠 열람 가독성을 향상시킬 수 있습니다.</p>
+			</div>
+      </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+		<button type="button" class="btn btn-primary addBtn" data-dismiss="modal" aria-label="Close">확인</button>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<!----
+<div class="modal fade" id="imgEditModal" tabindex="-1" role="dialog" aria-labelledby="imgEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">그룹 이미지 편집</h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  <div class="modal-body">
+		<div class="m-left">
+			<img src="./image/thumb/a3dec68748671404360185104.webp"/>
+		</div>
+		<div class="m-right">
+			<div class="tab-group">
+				<button type="button" class="btn btn-edit">편집</button>
+				<button type="button" class="btn btn-change">순서</button>
+			</div>
+			<div class="tab tab1">
+				<button type="button" class="btn btn-m" onclick="imgEdit(1)">개별 이미지</button>
+				<button type="button" class="btn btn-m" onclick="imgEdit(2)">끊김없는 이미지(웹툰)</button>
+				<button type="button" class="btn btn-m" onclick="imgEdit(3)">정사각형</button>
+				<button type="button" class="btn btn-m" onclick="imgEdit(4)">타일</button>
+				<button type="button" class="btn btn-m" onclick="imgEdit(5)">슬라이드</button>
+				<hr/>
+				<button type="button" class="btn btn-m" onclick="imgEdit(6)">원본크기</button>
+				<button type="button" class="btn btn-m" onclick="imgEdit(7)">본문크기</button>
+			</div>
+			<div class="tab tab2">
+				<div class="col-group">
+					<label class="col-t">
+						<div class="checkimg">
+							<label for="check-1" class="custom-checkbox">
+								<input type="checkbox" id="check-1" value="1"/>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<img src="./image/thumb/a3dec68748671404360185104.webp"/>
+						<div class="name">
+							<input type="text" placeholder="이미지 설명 입력"/>
+							<h4>매뉴위치표시.PNG</h4>
+						</div>
+						<button type="button" class="closeBtnImg">
+							<svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSvgIcon-root MuiSvgIcon-sizeMd joy-7cffc5">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM9.707 8.293a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z" fill="currentColor"></path>
+							</svg>
+						</button>
+					</label>
+				</div>
+				<div class="col-btns">
+					<a><i class="fas fa-arrow-down"></i></a>
+					<a><i class="fas fa-arrow-up"></i></a>
+					<a><i class="fas fa-angle-double-down"></i></a>
+					<a><i class="fas fa-angle-double-up"></i></a>
+				</div>
+			</div>
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<div class="m-left">
+			<button type="button" class="btn btn-prev" onclick="showimgModal()">이미지보관함</button>
+		</div>
+		<div class="m-right">
+			<button type="button" class="btn btn-light closeBtn" data-dismiss="modal" aria-label="Close">취소</button>
+			<button type="button" class="btn btn-primary addBtn" id="submitBtn">삽입</button>
+		</div>
+	  </div>
+    </div>
+  </div>
+</div>
+-->
+
+</div>
+</body>
+</html>
