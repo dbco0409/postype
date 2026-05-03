@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import url("./common.css");
+
+.login{padding: 100px 26px; max-width:372px; font-size: 14px; color: #606060; margin:30px auto; }
+.login h1{font-size: 26px; margin-bottom:16px; font-weight:600; color:#000; }
+.login p{margin-bottom:24px;}
+.login p.msg-m{display:none; }
+.login p a{display:inline-block; margin-left:4px; color:#000; text-decoration:underline; font-weight:500; }
+.login .login-frm{ margin: 20px 0 24px; display:flex; flex-direction: column;}
+.login .login-frm .form-group{margin-bottom:24px; }
+.login .login-frm .form-label-sm{padding-bottom: 4px;font-size: 13px; font-weight:500; margin-bottom:0; color: #606060;}
+.login .login-frm .input-txt{padding: 10px 12px; font-size: 16px; line-height:26px; border-radius: 4px; height: 40px; border:1px solid; box-shadow:none; outline:none; color:#495057; border-color: var(--border-color04); display:flex; width:100%; margin-bottom:12px; background:var(--background-color);}
+.login .login-frm .btn-login{padding: 11px 20px; width:100%; }
+.login .login-btns{display:flex; flex-direction: column;}
+.login .login-btns .login-btn{display:flex; padding: 11px 20px; font-size: 15px; border-radius: 4px; margin-bottom:12px; background:var(--background-color); border:1px solid; border-color:var(--border-color04); }
+.login .login-btns .login-btn:hover{border-color:#606060}
+.login .login-btns .login-btn i{display:inline-block; width:24px; height:24px; font-size:20px; color:#a0a0a0; margin-right:20px;  }
+.login .login-btns .login-btn i.sns-google{background:url(../image/common/google.svg) no-repeat;}
+.login .login-btns .login-btn i.sns-naver{background:url(../image/common/naver.svg) no-repeat;}
+.login .login-btns .login-btn span{color:var(--light-color); font-weight: 500;}
+.login .login-check {margin:24px 0; }
+.login .register-menu{border-top:1px solid; border-bottom:1px solid; padding:24px 0; border-color: rgba(0, 0, 0, .05);}
+.login .register-menu a{font-size: 14px; color: #606060;}
+.login .register-menu a:hover{text-decoration:underline;}
+.login .register-menu span{display:inline-block; margin:0 8px; }
+.login .register-check{margin-top:30px; margin-bottom:24px; }
+.login .register-check label{font-size:13px; font-weight: 400; margin-bottom: 12px;}
+.login .register-check label a{font-size:13px; margin-left:4px; display:inline-block; color:#444; text-decoration: underline;}
+.login .sns-txt,
+.login .back-btn{font-size: 13px; line-height: 1.4; margin:24px 0; color: #909090; word-break:keep-all;}
+.login .sns-txt a{color:#909090; text-decoration:underline; }
+.login .back-btn{padding:24px 0; border-top:1px solid; border-color: rgba(0, 0, 0, .05);}
+.login .back-btn a{font-size: 14px; color:#606060; text-decoration:none; }
+.login .back-btn a i{display:inline-block; margin:2px 8px 0 0}
+
+@media (max-width: 768px) {
+.login{padding: 80px 26px;}
+.login p.msg-pc{display:none;}
+.login p.msg-m{display:block; }
+.login h1{font-size: 22px;}
+}

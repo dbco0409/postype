@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url("./common.css");
 
+<<<<<<< HEAD
 .first-body.body{margin-top:108px; }
 .last-body.body{margin-bottom:32px; }
 .body{padding-top:30px; margin-top:32px; }
@@ -27,6 +28,12 @@
 .webzin-body .post-list .post-container .post-contents{display:flex; }
 .webzin-body .post-list .post-container .post-contents .post-wrap .title{font-size: 18px; font-weight:600; margin-bottom: 6px}
 .webzin-body .post-list .post-container .post-contents .post-wrap .contents{font-size: 16px; line-height: 135%; margin-bottom:0; color: rgba(0, 0, 0, .47);}
+=======
+.webzin-body .post-list .post-container{width:49%; padding:24px 24px 18px; margin-bottom:20px; border:1px solid var(--border-color); border-radius:8px; display:flex;  flex-direction: column; }
+.webzin-body .post-list .post-container .post-contents{display:flex; }
+.webzin-body .post-list .post-container .post-contents .post-wrap .title{font-size: 17px; font-weight:600; margin-bottom: 6px}
+.webzin-body .post-list .post-container .post-contents .post-wrap .contents{font-size: 15px; line-height: 135%; margin-bottom:0; color: rgba(0, 0, 0, .47);}
+>>>>>>> a13b461 (feat.add)
 .webzin-body .post-list .post-container .post-contents .post-wrap .post-tags{margin-top: 10px;}
 .webzin-body .post-list .post-container .post-contents .post-thumb{margin-left:24px; width:120px; overflow:hidden;  }
 .webzin-body .post-list .post-container .post-contents .post-thumb img{max-width:100%; border-radius:8px;}
@@ -39,6 +46,7 @@
 .webzin-body .post-list .post-container .post-contents-bottom .post-action .btn-scrap{display:inline-block; width:32px; height:32px; padding:7px; font-size:16px; color:rgba(0,0,0,.47); }
 
 @media (max-width: 990px) {
+<<<<<<< HEAD
 .body .inner{width:100%; }
 .body .tit, .body .post-category{margin-left:3%; }
 .webzin-body .post-list .post-container{width:98%; border-radius:0; }
@@ -50,6 +58,24 @@
 .gallery-body .post-gallery .post-contents .post-thumb img{width:100%; height:178px; border-radius: 8px; overflow:hidden; border:1px solid rgba(0,0,0,.05) } 
 .gallery-body .post-gallery .post-contents .post-wrap{margin-top:12px; }
 .gallery-body .post-gallery .post-contents .post-wrap .title{font-size:17px; font-weight:600; color:#000; }
+=======
+.webzin-body .post-list .post-container{width:100%; padding:20px 20px 15px; border-radius:0; }
+.webzin-body .post-list .post-container .post-contents{justify-content: space-between;}
+}
+@media (max-width: 768px) {
+.body .post-category a{ font-size: 14px; line-height: 24px; height: 32px; padding: 6px 12px;}
+.body .post-tags span{font-size: 12px; line-height: 16px;}
+.body .post-tags span:last-child{display:none; }
+.webzin-body .post-list .post-container .post-contents .post-wrap .title{font-size:16px; }
+.webzin-body .post-list .post-container .post-contents .post-wrap .contents{font-size:14px; }
+}
+
+.gallery-body .post-gallery{display:flex; flex-wrap: wrap; margin: 24px -8px; justify-content: space-between;}
+.gallery-body .post-gallery .post-contents{width:25%; margin-bottom:20px; padding:0 8px}
+.gallery-body .post-gallery .post-contents .post-thumb img{width:100%; height:11vw; border-radius: 8px; overflow:hidden; border:1px solid rgba(0,0,0,.05) } 
+.gallery-body .post-gallery .post-contents .post-wrap{margin-top:12px; }
+.gallery-body .post-gallery .post-contents .post-wrap .title{font-size:17px; font-weight:600; color:var(--light-color); }
+>>>>>>> a13b461 (feat.add)
 .gallery-body .post-gallery .post-contents .post-wrap .product{margin:0; margin-top:6px; font-size:13px; }
 .gallery-body .post-gallery .post-contents .post-wrap .product .name{display:inline-block; margin-right:6px; }
 .gallery-body .post-gallery .post-contents .post-wrap .product .st{color:#6E6E73; }
@@ -59,6 +85,16 @@
 .gallery-body .post-gallery{margin:24px 2%;}
 .gallery-body .post-gallery .post-contents{width:33.33%;}
 .gallery-body .post-gallery .post-contents:last-child{display:none; }
+<<<<<<< HEAD
 .gallery-body .post-gallery .post-contents .post-thumb img{width:100%; height:188px; border-radius: 8px; overflow:hidden; border:1px solid rgba(0,0,0,.05) } 
 
+=======
+.gallery-body .post-gallery .post-contents .post-thumb img{width:100%; height:20vw; border-radius: 8px; overflow:hidden; border:1px solid rgba(0,0,0,.05) } 
+}
+@media (max-width: 768px) {
+.gallery-body .post-gallery .post-contents{width:50%;}
+.gallery-body .post-gallery .post-contents:last-child{display:block; }
+.gallery-body .post-gallery .post-contents .post-thumb img{height:30vw; }
+.gallery-body .post-gallery .post-contents .post-wrap .title{font-size:16px;}
+>>>>>>> a13b461 (feat.add)
 }

@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< HEAD
   font-family: "NanumSquare";
   src: url("./fonts/NanumSquareB.eot"); /* IE9 Compat Modes */
   src: url("./fonts/NanumSquareB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
@@ -27,11 +28,20 @@
     url("./fonts/NanumSquareEB.ttf") format("truetype"), /* Safari, Android, iOS */
     url("./fonts/NanumSquareEB.woff") format("woff"), /* Modern Browsers */
     url("./fonts/NanumSquareEB.woff2") format("woff2"); /* Modern Browsers */
+=======
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Black.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Black.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Black.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Black.woff2") format("woff2"); /* Modern Browsers */
+>>>>>>> a13b461 (feat.add)
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
+<<<<<<< HEAD
   font-family: "NanumGothic";
   src: url("./fonts/NanumGothicB.eot"); /* IE9 Compat Modes */
   src: url("./fonts/NanumGothicB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
@@ -41,3 +51,81 @@
   font-weight: 600;
   font-style: normal;
 }
+=======
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Bold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-SemiBold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSans-SemiBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSans-SemiBold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSans-SemiBold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSans-SemiBold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Medium.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Medium.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Medium.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Medium.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Regular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-DemiLight.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-DemiLight.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-DemiLight.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-DemiLight.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-DemiLight.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Light.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Light.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Light.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Light.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSansKR-Thin.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSansKR-Thin.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/NotoSansKR-Thin.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/NotoSansKR-Thin.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSansKR-Thin.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 100;
+  font-style: normal;
+}
+
+>>>>>>> a13b461 (feat.add)
